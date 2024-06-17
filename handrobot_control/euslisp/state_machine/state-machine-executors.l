@@ -57,23 +57,23 @@
 
 (define-state-executor execute-state-walk :STAND_WALK
   :transition (
-    (unless (eq *current-state* :PAUSED)
-      (setq *walk-next-part* :PART1)
-      (send *ri* :angle-vector #f(101.048 48.2963 -19.71 23.1525 -0.33749 48.8363 -39.6562 12.0488 -12.96 53.1563 -41.445 -8.43749 -12.6225 56.43 -41.7487 -16.9425 -1.38374 33.3113 -18.9337) 2000)
-      (send *ri* :wait-interpolation)
-      )
+    ;; (unless (eq *current-state* :PAUSED)
+    ;;   (setq *walk-next-part* :PART1)
+    ;;   (send *ri* :angle-vector #f(101.048 48.2963 -19.71 23.1525 -0.33749 48.8363 -39.6562 12.0488 -12.96 53.1563 -41.445 -8.43749 -12.6225 56.43 -41.7487 -16.9425 -1.38374 33.3113 -18.9337) 2000)
+    ;;   (send *ri* :wait-interpolation)
+    ;;   )
     )
   :persistent (
     (cond
       ((eq *walk-next-part* :PART1)
        (send *ri* :angle-vector-sequence *walk-angle-part1*
-             (make-list (length *walk-angle-part1*) :initial-element 450))
+             (make-list (length *walk-angle-part1*) :initial-element 500))
        (send *ri* :wait-interpolation)
        (setq *walk-next-part* :PART2))
 
       ((eq *walk-next-part* :PART2)
        (send *ri* :angle-vector-sequence *walk-angle-part2*
-             (make-list (length *walk-angle-part2*) :initial-element 450))
+             (make-list (length *walk-angle-part2*) :initial-element 500))
        (send *ri* :wait-interpolation)
        (setq *walk-next-part* :PART1))
       )
@@ -104,7 +104,7 @@
     (servo-on-wait)
     (when (eq *current-state* :SITTING)
       (send *ri* :angle-vector-sequence *upright-angle*
-            (make-list (length *upright-angle*) :initial-element 1200))
+            (make-list (length *upright-angle*) :initial-element 2000))
       (send *ri* :wait-interpolation))
   )
   :persistent ()
@@ -189,7 +189,7 @@
   :persistent (
     (when (eq *walk-mode* :ALL)
       (send *ri* :angle-vector-sequence *wheel-walk-angle*
-            (make-list (length *wheel-walk-angle*) :initial-element 500))
+            (make-list (length *wheel-walk-angle*) :initial-element 450))
       (send *ri* :wait-interpolation))
     (when (eq *walk-mode* :145)
       (send *ri* :angle-vector-sequence *wheel-walk-145-angle*

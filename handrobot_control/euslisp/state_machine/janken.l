@@ -56,7 +56,7 @@
 (defun generate-time-list (pose-seq)
   (let ((len (length pose-seq)))
     (if (= len 1)
-        (list 1400) ;; 直接移動の場合の時間
+        (list 1700) ;; 直接移動の場合の時間
       (make-list len :initial-element 1200)))) ;; 軌道の場合の各区間の時間
 
 
