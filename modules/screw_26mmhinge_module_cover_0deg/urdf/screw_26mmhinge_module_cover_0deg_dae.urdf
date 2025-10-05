@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="screw_26mmhinge_module_cover_0deg">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.000397243037985137 -0.000299123988951571 0.0268900174967925" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0392907478850212"/>
+      <inertia ixx="6.49315163386437e-06" ixy="-1.58700153015025e-07" ixz="1.07943557378575e-07" iyy="7.59585884582494e-06" iyz="-1.02493309535865e-09" izz="5.32693747823652e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link.dae"/>
+      </geometry>
+      <material name="__unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311372 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.015679495466009"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828607e-09" ixz="1.04881203366641e-08" iyy="2.26742863290264e-06" iyz="5.68818291644029e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1.dae"/>
+      </geometry>
+      <material name="__unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592702 -0.00283550060370832" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446753e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914748e-09" iyy="5.88144881419792e-08" iyz="3.56234285325651e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link.dae"/>
+      </geometry>
+      <material name="__unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="0.0" upper="1.78"/>
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="link1"/>
+    <child link="dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <material name="__unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="__unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+</robot>

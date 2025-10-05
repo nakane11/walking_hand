@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version:   Build Version: 1.6.9305.33219
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="screw_cm_module">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000234526751972131 -0.00028602879195132 0.00492715673473502"
+        rpy="0 0 0" />
+      <mass
+        value="0.00883872367866773" />
+      <inertia
+        ixx="8.44969262482198E-07"
+        ixy="-2.38438590170593E-09"
+        ixz="4.75238560676722E-09"
+        iyy="8.63389925030388E-07"
+        iyz="5.42634773688696E-09"
+        izz="1.43408773061232E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.007"
+        rpy="-1.5707963267949 0 3.14159265358979" />
+      <geometry>
+        <mesh
+          filename="package://screw_cm_module/meshes/base_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.007"
+        rpy="-1.5707963267949 0 3.14159265358979" />
+      <geometry>
+        <mesh
+          filename="package://screw_cm_module/meshes/base_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.0122754950678387 0.00451490759273611 0.0192976588266299"
+        rpy="0 0 0" />
+      <mass
+        value="0.0525185279217828" />
+      <inertia
+        ixx="1.20898118628892E-05"
+        ixy="6.79207945311754E-07"
+        ixz="7.33692665286359E-07"
+        iyy="1.05211895809663E-05"
+        iyz="2.1948178305605E-07"
+        izz="1.33437679174632E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-1.19604185773867E-16 -4.03531222266095E-17 -0.005"
+        rpy="-1.5707963267949 -1.21763836300644E-16 -1.03500830562512E-14" />
+      <geometry>
+        <mesh
+          filename="package://screw_cm_module/meshes/link1.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-1.19604185773867E-16 -4.03531222266095E-17 -0.005"
+        rpy="-1.5707963267949 -1.21763836300644E-16 -1.03500830562512E-14" />
+      <geometry>
+        <mesh
+          filename="package://screw_cm_module/meshes/link1.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.012"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.356"
+      upper="2.356"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="dummy_link">
+    <inertial>
+      <origin
+        xyz="-0.0014613152281131 0.000201870812535348 -0.00283550672359347"
+        rpy="0 0 0" />
+      <mass
+        value="0.00131294858172581" />
+      <inertia
+        ixx="5.41755485203049E-08"
+        ixy="1.27650587238183E-09"
+        ixz="-4.82976540098191E-09"
+        iyy="5.88144862744986E-08"
+        iyz="3.56234284775796E-10"
+        izz="1.05520720424416E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.00100023549168366 0.0188674418534608 -0.0507233950838484"
+        rpy="-1.5707963267949 -1.29342499600256 1.62376058307757" />
+      <geometry>
+        <mesh
+          filename="package://screw_cm_module/meshes/dummy_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.00100023549168366 0.0188674418534608 -0.0507233950838484"
+        rpy="-1.5707963267949 -1.29342499600256 1.62376058307757" />
+      <geometry>
+        <mesh
+          filename="package://screw_cm_module/meshes/dummy_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dummy_joint"
+    type="fixed">
+    <origin
+      xyz="0.0436109777441064 0 0.0270612891532417"
+      rpy="-1.2930552091209 -0.0509380987630674 -1.58531200142448" />
+    <parent
+      link="link1" />
+    <child
+      link="dummy_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

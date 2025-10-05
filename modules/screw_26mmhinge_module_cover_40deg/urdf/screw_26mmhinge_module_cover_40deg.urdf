@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version:   Build Version: 1.6.9305.33219
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="screw_26mmhinge_module_cover_40deg">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656"
+        rpy="0 0 0" />
+      <mass
+        value="0.0388983022333583" />
+      <inertia
+        ixx="6.28968153745185E-06"
+        ixy="-1.58891717516252E-07"
+        ixz="1.06958872572826E-07"
+        iyy="7.30853508101172E-06"
+        iyz="2.75384527151901E-08"
+        izz="5.23270325750328E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.5707963267949 -1.23259516440783E-32 -1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.662745098039216 0.541176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.5707963267949 -1.23259516440783E-32 -1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156794954660089" />
+      <inertia
+        ixx="2.36251577154097E-06"
+        ixy="-2.28902268828719E-09"
+        ixz="1.04881203366649E-08"
+        iyy="2.26742863290264E-06"
+        iyz="5.68818291644002E-09"
+        izz="3.78920030884968E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-4.78706382828717E-18 -2.27356509549241E-13 -0.04"
+        rpy="-1.5707963267949 -5.6843768294084E-12 -1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-4.78706382828717E-18 -2.27356509549241E-13 -0.04"
+        rpy="-1.5707963267949 -5.6843768294084E-12 -1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.698"
+      upper="1.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="dummy_link">
+    <inertial>
+      <origin
+        xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834"
+        rpy="0 0 0" />
+      <mass
+        value="0.00131295075943631" />
+      <inertia
+        ixx="5.41755504446752E-08"
+        ixy="1.27650591704971E-09"
+        ixz="-4.82976525914747E-09"
+        iyy="5.88144881419792E-08"
+        iyz="3.56234285325664E-10"
+        izz="1.05520720481453E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-5.70310545120184E-14 1.16021683487197E-16 -0.073"
+        rpy="-1.57079632679489 -5.5511151231276E-17 2.09425057814711E-14" />
+      <geometry>
+        <mesh
+          filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-5.70310545120184E-14 1.16021683487197E-16 -0.073"
+        rpy="-1.57079632679489 -5.5511151231276E-17 2.09425057814711E-14" />
+      <geometry>
+        <mesh
+          filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dummy_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.033"
+      rpy="0 0 -1.57079632679492" />
+    <parent
+      link="link1" />
+    <child
+      link="dummy_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

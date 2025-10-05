@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="palm">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0537837189568639 -0.000735089523891269 0.0875877825389031" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.274553101575067"/>
+      <inertia ixx="0.000434149537516523" ixy="3.82592618679265e-06" ixz="-0.000192550140415889" iyy="0.00117466284857924" iyz="1.01174695313173e-05" izz="0.000782483739198173"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/base_link.dae"/>
+      </geometry>
+      <material name="__unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/base_link.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link1">
+    <inertial>
+      <origin xyz="-0.000172481557313531 6.01982933235365e-05 -0.00259009685862507" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783525"/>
+      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935475e-09" ixz="-5.68819834183881e-09" iyy="1.95430556833594e-06" iyz="6.27899886931677e-10" izz="3.69885599478183e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link1.dae"/>
+      </geometry>
+      <material name="__unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link1.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link2">
+    <inertial>
+      <origin xyz="-0.000172481557313628 6.01982933235283e-05 -0.00259009685862507" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783526"/>
+      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935204e-09" ixz="-5.68819834183908e-09" iyy="1.95430556833594e-06" iyz="6.27899886931739e-10" izz="3.69885599478183e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link2.dae"/>
+      </geometry>
+      <material name="__unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link2.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link3">
+    <inertial>
+      <origin xyz="-0.000172481557313607 6.01982933235322e-05 -0.00259009685862505" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783526"/>
+      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935102e-09" ixz="-5.68819834183894e-09" iyy="1.95430556833594e-06" iyz="6.2789988693156e-10" izz="3.69885599478183e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link3.dae"/>
+      </geometry>
+      <material name="__unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link3.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link4">
+    <inertial>
+      <origin xyz="-0.00017248155731359 6.01982933235428e-05 -0.00259009685862505" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783526"/>
+      <inertia ixx="1.92006679954347e-06" ixy="2.28901701935341e-09" ixz="-5.68819834183874e-09" iyy="1.95430556833594e-06" iyz="6.27899886931517e-10" izz="3.69885599478184e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link4.dae"/>
+      </geometry>
+      <material name="__unnamed_material_5"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link4.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link5">
+    <inertial>
+      <origin xyz="-0.000172556814431887 6.02216550355177e-05 -0.00259010777209796" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886601362974"/>
+      <inertia ixx="1.9201418091373e-06" ixy="2.27696720708466e-09" ixz="-5.68868325973998e-09" iyy="1.95428446813742e-06" iyz="6.2782306321744e-10" izz="3.6989097395101e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link5.dae"/>
+      </geometry>
+      <material name="__unnamed_material_6"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link5.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="dummy_joint1" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link1"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="-0.134 0.0 0.104" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint2" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link2"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="-0.0790000000000001 0.0 0.148" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint3" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link3"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="-0.024 0.0 0.169" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint4" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link4"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0309999999999999 0.0 0.138" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint5" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link5"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.018463196704848 0.0 0.0524638930461059" rpy="3.14159265358979 0.6356359574700541 3.14159265358978"/>
+  </joint>
+  <material name="__unnamed_material_1">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="__unnamed_material_2">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_4">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_5">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_6">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+</robot>
