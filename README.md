@@ -21,6 +21,8 @@ python scripts/generate_hand_urdf.py hand_robot.xacro -o hand_robot.urdf
 ```
 #### B. 特定の指を除外したURDF
 `--exclude`オプションに続いて，除外したい指の名前をスペース区切りで指定
+
+母指 (thumb)，示指 (index)，中指 (middle)，環指 (ring)，小指 (little)
 ```
 python scripts/generate_hand_urdf.py hand_robot.xacro -o hand_robot_without_thumb_little.urdf --exclude thumb little
 ```
