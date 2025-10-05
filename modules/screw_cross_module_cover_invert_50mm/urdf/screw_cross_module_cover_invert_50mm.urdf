@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version:   Build Version: 1.6.9305.33219
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="screw_cross_module_cover_invert_50mm">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000213433946328543 -0.000522257566248314 0.010512356078851"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119791718336502" />
+      <inertia
+        ixx="1.31621870893497E-06"
+        ixy="-5.13940617703683E-09"
+        ixz="6.92655022774858E-09"
+        iyy="1.42670892278346E-06"
+        iyz="5.85355266632325E-09"
+        izz="1.57468742862286E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 -8.99602877098562E-32 -1.11022302462516E-16" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 -8.99602877098562E-32 -1.11022302462516E-16" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="2.40548098907604E-05 0.0170200166175038 0.00743211422338727"
+        rpy="0 0 0" />
+      <mass
+        value="0.0528420021206123" />
+      <inertia
+        ixx="8.46927525862569E-06"
+        ixy="3.77104103813554E-08"
+        ixz="-2.40264131836263E-09"
+        iyy="9.18514204610879E-06"
+        iyz="3.33117292501083E-07"
+        izz="7.42897064027825E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-1.18736790011845E-15 3.78518148522238E-17 -0.0349999999999999"
+        rpy="1.5707963267949 -2.2651969934545E-14 -4.78308783376836E-17" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/link1.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-1.18736790011845E-15 3.78518148522238E-17 -0.0349999999999999"
+        rpy="1.5707963267949 -2.2651969934545E-14 -4.78308783376836E-17" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/link1.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0349999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.000799904651096249 0.000126545018078978 0.0439031855091127"
+        rpy="0 0 0" />
+      <mass
+        value="0.0184890044461961" />
+      <inertia
+        ixx="3.86018266499349E-06"
+        ixy="-2.57346007074634E-09"
+        ixz="-1.33830705751634E-08"
+        iyy="3.71216828080987E-06"
+        iyz="1.02631852497554E-09"
+        izz="3.85438258007771E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-1.18736790011846E-15 -5.68055670459558E-14 -0.0349999999999999"
+        rpy="1.5707963267949 -2.2651969934545E-14 -4.78308783376836E-17" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/link2.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-1.18736790011846E-15 -5.68055670459558E-14 -0.0349999999999999"
+        rpy="1.5707963267949 -2.2651969934545E-14 -4.78308783376836E-17" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/link2.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.698"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="dummy_link">
+    <inertial>
+      <origin
+        xyz="-0.00146131369472048 0.000201870283507455 -0.00283550060362608"
+        rpy="0 0 0" />
+      <mass
+        value="0.00131295075943631" />
+      <inertia
+        ixx="5.41755504446202E-08"
+        ixy="1.27650591705179E-09"
+        ixz="-4.82976525885559E-09"
+        iyy="5.88144881419791E-08"
+        iyz="3.56234285318554E-10"
+        izz="1.05520720481508E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="1.4525706004937E-14 -8.72792683668239E-14 -0.0919999998698718"
+        rpy="1.5707963267949 0 1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="1.4525706004937E-14 -8.72792683668239E-14 -0.0919999998698718"
+        rpy="1.5707963267949 0 1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dummy_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0569999998698719"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="link2" />
+    <child
+      link="dummy_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="screw_cross_module_cover_invert_50mm">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.000213433946328543 -0.000522257566248314 0.010512356078851" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119791718336502"/>
+      <inertia ixx="1.31621870893497e-06" ixy="-5.13940617703683e-09" ixz="6.92655022774858e-09" iyy="1.42670892278346e-06" iyz="5.85355266632325e-09" izz="1.57468742862286e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link.dae"/>
+      </geometry>
+      <material name="__unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="link1">
+    <inertial>
+      <origin xyz="2.40548098907604e-05 0.0170200166175038 0.00743211422338727" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0528420021206123"/>
+      <inertia ixx="8.46927525862569e-06" ixy="3.77104103813554e-08" ixz="-2.40264131836263e-09" iyy="9.18514204610879e-06" iyz="3.33117292501083e-07" izz="7.42897064027825e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1.dae"/>
+      </geometry>
+      <material name="__unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="link2">
+    <inertial>
+      <origin xyz="-0.000799904651096249 0.000126545018078978 0.0439031855091127" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0184890044461961"/>
+      <inertia ixx="3.86018266499349e-06" ixy="-2.57346007074634e-09" ixz="-1.33830705751634e-08" iyy="3.71216828080987e-06" iyz="1.02631852497554e-09" izz="3.85438258007771e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2.dae"/>
+      </geometry>
+      <material name="__unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link">
+    <inertial>
+      <origin xyz="-0.00146131369472048 0.000201870283507455 -0.00283550060362608" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705179e-09" ixz="-4.82976525885559e-09" iyy="5.88144881419791e-08" iyz="3.56234285318554e-10" izz="1.05520720481508e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link.dae"/>
+      </geometry>
+      <material name="__unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link.dae"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-1.5" upper="1.5"/>
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <axis xyz=" 0. -1.  0."/>
+    <origin xyz="0.0 0.0 0.0349999999999999" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="joint2" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.57"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="link2"/>
+    <child link="dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0569999998698719" rpy="0.0 -0.0 -1.5707963267949003"/>
+  </joint>
+  <material name="__unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="__unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_4">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+</robot>

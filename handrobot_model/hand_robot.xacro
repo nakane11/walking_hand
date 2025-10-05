@@ -1,0 +1,137 @@
+<robot name="hand_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find screw_cross_module_cover_invert_50mm)/urdf/screw_cross_module_cover_invert_50mm_dae.xacro" />
+  <xacro:include filename="$(find palm)/urdf/palm_dae.xacro" />
+  <xacro:include filename="$(find fingertip)/urdf/fingertip_dae.xacro" />
+  <xacro:include filename="$(find screw_cm_module)/urdf/screw_cm_module_dae.xacro" />
+  <xacro:include filename="$(find screw_26mmhinge_module_cover_40deg)/urdf/screw_26mmhinge_module_cover_40deg_dae.xacro" />
+  <xacro:include filename="$(find screw_26mmhinge_module_cover_0deg)/urdf/screw_26mmhinge_module_cover_0deg_dae.xacro" />
+
+  <link name="world" />
+  <xacro:palm
+    prefix=""
+    parent_link="world">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:palm>
+  
+  <xacro:screw_cross_module_cover_invert_50mm
+    prefix="little_module1_"
+    parent_link="dummy_link1"
+    rpy="0.0 0.0 3.14159265359">
+  </xacro:screw_cross_module_cover_invert_50mm>
+
+  <xacro:screw_26mmhinge_module_cover_0deg
+    prefix="little_module2_"
+    parent_link="little_module1_dummy_link"
+    rpy="0 0 -1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_0deg>
+
+  <xacro:screw_26mmhinge_module_cover_40deg
+    prefix="little_module3_"
+    parent_link="little_module2_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_40deg>
+
+  <xacro:fingertip
+    prefix="little_module4_"
+    parent_link="little_module3_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:fingertip>
+
+  <xacro:screw_cross_module_cover_invert_50mm
+    prefix="ring_module1_"
+    parent_link="dummy_link2"
+    rpy="0.0 0.0 3.14159265359">
+  </xacro:screw_cross_module_cover_invert_50mm>
+
+  <xacro:screw_26mmhinge_module_cover_0deg
+    prefix="ring_module2_"
+    parent_link="ring_module1_dummy_link"
+    rpy="0 0 -1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_0deg>
+
+  <xacro:screw_26mmhinge_module_cover_40deg
+    prefix="ring_module3_"
+    parent_link="ring_module2_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_40deg>
+
+  <xacro:fingertip
+    prefix="ring_module4_"
+    parent_link="ring_module3_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:fingertip>
+
+  <xacro:screw_cross_module_cover_invert_50mm
+    prefix="middle_module1_"
+    parent_link="dummy_link3"
+    rpy="0.0 0.0 3.14159265359">    
+  </xacro:screw_cross_module_cover_invert_50mm>
+
+  <xacro:screw_26mmhinge_module_cover_0deg
+    prefix="middle_module2_"
+    parent_link="middle_module1_dummy_link"
+    rpy="0 0 -1.5707963267948966">    
+  </xacro:screw_26mmhinge_module_cover_0deg>
+
+  <xacro:screw_26mmhinge_module_cover_40deg
+    prefix="middle_module3_"
+    parent_link="middle_module2_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_40deg>
+
+  <xacro:fingertip
+    prefix="middle_module4_"
+    parent_link="middle_module3_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:fingertip>
+
+  <xacro:screw_cross_module_cover_invert_50mm
+    prefix="index_module1_"
+    parent_link="dummy_link4"
+    rpy="0.0 0.0 3.14159265359">    
+  </xacro:screw_cross_module_cover_invert_50mm>
+
+  <xacro:screw_26mmhinge_module_cover_0deg
+    prefix="index_module2_"
+    parent_link="index_module1_dummy_link"
+    rpy="0 0 -1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_0deg>
+
+  <xacro:screw_26mmhinge_module_cover_40deg
+    prefix="index_module3_"
+    parent_link="index_module2_dummy_link"
+    rpy="0 0 1.5707963267948966">    
+  </xacro:screw_26mmhinge_module_cover_40deg>
+
+  <xacro:fingertip
+    prefix="index_module4_"
+    parent_link="index_module3_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:fingertip>
+
+  <xacro:screw_cm_module
+    prefix="thumb_module1_"
+    parent_link="dummy_link5">
+    <origin xyz="0 0 0" rpy="0 0 3.14159265359"/>
+  </xacro:screw_cm_module>
+
+  <xacro:screw_26mmhinge_module_cover_40deg
+    prefix="thumb_module2_"
+    parent_link="thumb_module1_dummy_link">
+    rpy="0 0 -1.5707963267948966">    
+  </xacro:screw_26mmhinge_module_cover_40deg>
+
+  <xacro:screw_26mmhinge_module_cover_40deg
+    prefix="thumb_module3_"
+    parent_link="thumb_module2_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:screw_26mmhinge_module_cover_40deg>
+
+  <xacro:fingertip
+    prefix="thumb_module4_"
+    parent_link="thumb_module3_dummy_link"
+    rpy="0 0 1.5707963267948966">
+  </xacro:fingertip>
+
+</robot>

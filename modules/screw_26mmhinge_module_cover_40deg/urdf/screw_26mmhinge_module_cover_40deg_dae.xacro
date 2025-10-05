@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="screw_26mmhinge_module_cover_40deg">
+  <xacro:macro name="screw_26mmhinge_module_cover_40deg" params="prefix:='' parent_link:=world xyz:='0 0 0' rpy:='0 0 0'">
+    <joint name="${parent_link}_to_${prefix}base_link_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}base_link"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+    <link name="${prefix}base_link">
+      <inertial>
+        <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+        <mass value="0.0388983022333583"/>
+        <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link.dae"/>
+        </geometry>
+        <material name="${prefix}__unnamed_material_1"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link.dae"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </collision>
+    </link>
+    <link name="${prefix}link1">
+      <inertial>
+        <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+        <mass value="0.0156794954660089"/>
+        <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1.dae"/>
+        </geometry>
+        <material name="${prefix}__unnamed_material_2"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1.dae"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </collision>
+    </link>
+    <link name="${prefix}dummy_link">
+      <inertial>
+        <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+        <mass value="0.00131295075943631"/>
+        <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link.dae"/>
+        </geometry>
+        <material name="${prefix}__unnamed_material_3"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link.dae"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </collision>
+    </link>
+    <joint name="${prefix}joint1" type="revolute">
+      <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link1"/>
+      <axis xyz="-1.  0.  0."/>
+      <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+    </joint>
+    <joint name="${prefix}dummy_joint" type="fixed">
+      <limit effort="0.0" velocity="0.0"/>
+      <parent link="${prefix}link1"/>
+      <child link="${prefix}dummy_link"/>
+      <axis xyz="0. 0. 0."/>
+      <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+    </joint>
+    <material name="${prefix}__unnamed_material_1">
+      <color rgba="1.         0.6627451  0.54117647 1.        "/>
+    </material>
+    <material name="${prefix}__unnamed_material_2">
+      <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+    </material>
+    <material name="${prefix}__unnamed_material_3">
+      <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+    </material>
+  </xacro:macro>
+</robot>

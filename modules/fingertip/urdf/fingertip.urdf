@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version:   Build Version: 1.6.9305.33219
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fingertip">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-4.45136749414631E-05 2.74911354251475E-05 0.01526296474957"
+        rpy="0 0 0" />
+      <mass
+        value="0.0143355339373342" />
+      <inertia
+        ixx="1.67198153889703E-06"
+        ixy="-3.86118634343168E-09"
+        ixz="2.09684473771432E-09"
+        iyy="2.41636111915256E-06"
+        iyz="2.62797611358753E-09"
+        izz="2.60259577595367E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-2.44929359829471E-16 2.50616061419398E-16 3.14159265358979" />
+      <geometry>
+        <mesh
+          filename="package://fingertip/meshes/base_link.3dxml" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.662745098039216 0.541176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="-2.44929359829471E-16 2.50616061419398E-16 3.14159265358979" />
+      <geometry>
+        <mesh
+          filename="package://fingertip/meshes/base_link.3dxml" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
