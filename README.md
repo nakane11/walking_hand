@@ -1,3 +1,6 @@
+<img width="126" height="143" alt="image" src="https://github.com/user-attachments/assets/1869d7d0-6a94-41e7-a81f-9646639558dc" />
+
+
 ### Setup
 ```
 mkdir -p ~/ros/hand/src
