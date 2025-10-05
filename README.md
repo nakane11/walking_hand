@@ -1,7 +1,5 @@
 ### Setup
 ```
-pip install scikit-robot==0.2.17
-pip install zacro==1.0.8
 mkdir -p ~/ros/hand/src
 cd ~/ros/hand/src
 git clone https://github.com/nakane11/walking_hand
@@ -10,6 +8,10 @@ catkin init
 catkin build handrobot_model
 ```
 ### urdfを生成
+```
+pip install scikit-robot==0.2.17
+pip install zacro==1.0.8
+```
 #### A. すべての指を含んだURDF
 `-o`で出力パスを指定
 ```
