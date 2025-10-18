@@ -4,12 +4,23 @@
 
 (defun func-check (userdata-alist)
   (format t "Execute state CHECK~%")
-  (print (cdr (assoc :imu userdata-alist)))
-    ;; (when (or (eq imu :none) (eq imu :bottom))
-    ;;   (return-from :func-check :update))
-    ;; (when (eq imu :top)
-    ;;   (return :help))
-    :bottom
+  (setq imu (cdr (assoc :imu userdata-alist)))
+  (cond
+   ((or (eq imu :none) (eq imu :bottom))
+    (progn
+      :update))
+    ((eq imu :top)
+     :help)
+    (t
+     imu)
+    )
+  )
+
+(defun func-wait (userdata-alist)
+  (format t "Execute state WAIT~%")
+  (setq imu (cdr (assoc :imu userdata-alist)))
+  ;; imuが:bottomになるのを待つ, timeoutで:failed
+  :succeeded
 )
 
 (defun func-help (userdata-alist)
@@ -75,6 +86,7 @@
     (send sm :add-node (instance state :init :RIGHT 'func-right))
     (send sm :add-node (instance state :init :CHECK 'func-check))
     (send sm :add-node (instance state :init :HELP 'func-help))
+    (send sm :add-node (instance state :init :WAIT 'func-wait))
 
     (send sm :goal-state :end)
     (send sm :start-state :CHECK)
@@ -87,17 +99,14 @@
     (send sm :add-transition :CHECK :RIGHT :right)
     (send sm :add-transition :CHECK :CHECK :update)
 
-    (send sm :add-transition :BOTTOM :CHECK :succeeded)
-    (send sm :add-transition :FRONT :CHECK :succeeded)
-    (send sm :add-transition :BACK :CHECK :succeeded)
-    (send sm :add-transition :LEFT :CHECK :succeeded)
-    (send sm :add-transition :RIGHT :CHECK :succeeded)
+    (send sm :add-transition :BOTTOM :WAIT :succeeded)
+    (send sm :add-transition :FRONT :WAIT :succeeded)
+    (send sm :add-transition :BACK :WAIT :succeeded)
+    (send sm :add-transition :LEFT :WAIT :succeeded)
+    (send sm :add-transition :RIGHT :WAIT :succeeded)
 
-    (send sm :add-transition :BOTTOM :HELP :failed)
-    (send sm :add-transition :FRONT :HELP :failed)
-    (send sm :add-transition :BACK :HELP :failed)
-    (send sm :add-transition :LEFT :HELP :failed)
-    (send sm :add-transition :RIGHT :HELP :failed)
+    (send sm :add-transition :WAIT :CHECK :succeeded)
+    (send sm :add-transition :WAIT :HELP :failed)
 
     (send sm :add-transition :HELP :end :failed)
     (send sm :add-transition :HELP :CHECK :succeeded)
