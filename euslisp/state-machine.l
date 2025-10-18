@@ -2,20 +2,25 @@
 (load "package://roseus_smach/src/state-machine.l")
 (ros::roseus-add-msgs "riberry_startup")
 
-(defun func-top (userdata-alist)
-  (format t "Execute state TOP~%")
-  :succeeded
+(defun func-check (userdata-alist)
+  (format t "Execute state CHECK~%")
+  (print (cdr (assoc :imu userdata-alist)))
+    ;; (when (or (eq imu :none) (eq imu :bottom))
+    ;;   (return-from :func-check :update))
+    ;; (when (eq imu :top)
+    ;;   (return :help))
+    :bottom
 )
 
-(defun func-bottom (userdata-alist)
-  (format t "Execute state BOTTOM~%")
+(defun func-help (userdata-alist)
+  (format t "Execute state HELP~%")
   :succeeded
 )
 
 (defun func-front (userdata-alist)
   (format t "Execute state FRONT~%")
   :succeeded
-  )
+)
 
 (defun func-back (userdata-alist)
   (format t "Execute state BACK~%")
@@ -25,20 +30,20 @@
 (defun func-left (userdata-alist)
   (format t "Execute state LEFT~%")
   :succeeded
-  )
+)
 
 (defun func-right (userdata-alist)
   (format t "Execute state RIGHT~%")
   :succeeded
-  )
+)
 
-(defun func-check (userdata-alist)
-  (format t "Execute state CHECK~%")
-  :top
+(defun func-bottom (userdata-alist)
+  (format t "Execute state BOTTOM~%")
+  :succeeded
 )
 
 (defclass getup-smach
-  :slots (sm))
+  :slots (sm userdata))
 
 (defmethod getup-smach
   (:init
@@ -49,13 +54,20 @@
 
   (:imu-cb
     (msg)
-    (print msg)
+    (case (send msg :face)
+      (0 (setf (cdr (assoc :imu userdata)) :none))
+      (1 (setf (cdr (assoc :imu userdata)) :top))
+      (2 (setf (cdr (assoc :imu userdata)) :bottom))
+      (3 (setf (cdr (assoc :imu userdata)) :front))
+      (4 (setf (cdr (assoc :imu userdata)) :back))
+      (5 (setf (cdr (assoc :imu userdata)) :left))
+      (6 (setf (cdr (assoc :imu userdata)) :right)))
     )
 
   (:make-state-machine
-    ()
+   ()
+    (setq userdata (list (cons :imu :none)))
     (setq sm (instance state-machine :init))
-    (send sm :add-node (instance state :init :TOP 'func-top))
     (send sm :add-node (instance state :init :BOTTOM 'func-bottom))
     (send sm :add-node (instance state :init :FRONT 'func-front))
     (send sm :add-node (instance state :init :BACK 'func-back))
@@ -67,7 +79,7 @@
     (send sm :goal-state :end)
     (send sm :start-state :CHECK)
 
-    (send sm :add-transition :CHECK :TOP :top)
+    (send sm :add-transition :CHECK :HELP :help)
     (send sm :add-transition :CHECK :BOTTOM :bottom)
     (send sm :add-transition :CHECK :FRONT :front)
     (send sm :add-transition :CHECK :BACK :back)
@@ -75,14 +87,12 @@
     (send sm :add-transition :CHECK :RIGHT :right)
     (send sm :add-transition :CHECK :CHECK :update)
 
-    (send sm :add-transition :TOP :CHECK :succeeded)
     (send sm :add-transition :BOTTOM :CHECK :succeeded)
     (send sm :add-transition :FRONT :CHECK :succeeded)
     (send sm :add-transition :BACK :CHECK :succeeded)
     (send sm :add-transition :LEFT :CHECK :succeeded)
     (send sm :add-transition :RIGHT :CHECK :succeeded)
 
-    (send sm :add-transition :TOP :HELP :failed)
     (send sm :add-transition :BOTTOM :HELP :failed)
     (send sm :add-transition :FRONT :HELP :failed)
     (send sm :add-transition :BACK :HELP :failed)
@@ -99,11 +109,11 @@
      (unix::sleep 1)
      (ros::spin-once)
      (ros::sleep)
-     (send sm :execute nil :step -1)
+     (send sm :execute userdata :step -1)
      )
     )
   )
 
 (ros::roseus "get_up")
-(setq gs (instance getup-smach :init))
-;; (send gs :execute)
+(setq gu (instance getup-smach :init))
+(send gu :execute)
