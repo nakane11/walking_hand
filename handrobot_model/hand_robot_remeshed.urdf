@@ -1,0 +1,1796 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="hand_robot">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0537837189568639 -0.000735089523891269 0.0875877825389031" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.274553101575067"/>
+      <inertia ixx="0.000434149537516523" ixy="3.82592618679265e-06" ixz="-0.000192550140415889" iyy="0.00117466284857924" iyz="1.01174695313173e-05" izz="0.000782483739198173"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="__unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link1">
+    <inertial>
+      <origin xyz="-0.000172481557313531 6.01982933235365e-05 -0.00259009685862507" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783525"/>
+      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935475e-09" ixz="-5.68819834183881e-09" iyy="1.95430556833594e-06" iyz="6.27899886931677e-10" izz="3.69885599478183e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link1_remeshed.dae"/>
+      </geometry>
+      <material name="__unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link2">
+    <inertial>
+      <origin xyz="-0.000172481557313628 6.01982933235283e-05 -0.00259009685862507" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783526"/>
+      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935204e-09" ixz="-5.68819834183908e-09" iyy="1.95430556833594e-06" iyz="6.27899886931739e-10" izz="3.69885599478183e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link2_remeshed.dae"/>
+      </geometry>
+      <material name="__unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link2_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link3">
+    <inertial>
+      <origin xyz="-0.000172481557313607 6.01982933235322e-05 -0.00259009685862505" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783526"/>
+      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935102e-09" ixz="-5.68819834183894e-09" iyy="1.95430556833594e-06" iyz="6.2789988693156e-10" izz="3.69885599478183e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link3_remeshed.dae"/>
+      </geometry>
+      <material name="__unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link3_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link4">
+    <inertial>
+      <origin xyz="-0.00017248155731359 6.01982933235428e-05 -0.00259009685862505" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886897783526"/>
+      <inertia ixx="1.92006679954347e-06" ixy="2.28901701935341e-09" ixz="-5.68819834183874e-09" iyy="1.95430556833594e-06" iyz="6.27899886931517e-10" izz="3.69885599478184e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link4_remeshed.dae"/>
+      </geometry>
+      <material name="__unnamed_material_5"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link4_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="dummy_link5">
+    <inertial>
+      <origin xyz="-0.000172556814431887 6.02216550355177e-05 -0.00259010777209796" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119886601362974"/>
+      <inertia ixx="1.9201418091373e-06" ixy="2.27696720708466e-09" ixz="-5.68868325973998e-09" iyy="1.95428446813742e-06" iyz="6.2782306321744e-10" izz="3.6989097395101e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link5_remeshed.dae"/>
+      </geometry>
+      <material name="__unnamed_material_6"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://palm/meshes/dummy_link5_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module1_base_link">
+    <inertial>
+      <origin xyz="-0.000213433946328543 -0.000522257566248314 0.010512356078851" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119791718336502"/>
+      <inertia ixx="1.31621870893497e-06" ixy="-5.13940617703683e-09" ixz="6.92655022774858e-09" iyy="1.42670892278346e-06" iyz="5.85355266632325e-09" izz="1.57468742862286e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module1___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module1_link1">
+    <inertial>
+      <origin xyz="2.40548098907604e-05 0.0170200166175038 0.00743211422338727" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0528420021206123"/>
+      <inertia ixx="8.46927525862569e-06" ixy="3.77104103813554e-08" ixz="-2.40264131836263e-09" iyy="9.18514204610879e-06" iyz="3.33117292501083e-07" izz="7.42897064027825e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="little_module1___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module1_link2">
+    <inertial>
+      <origin xyz="-0.000799904651096249 0.000126545018078978 0.0439031855091127" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0184890044461961"/>
+      <inertia ixx="3.86018266499349e-06" ixy="-2.57346007074634e-09" ixz="-1.33830705751634e-08" iyy="3.71216828080987e-06" iyz="1.02631852497554e-09" izz="3.85438258007771e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.dae"/>
+      </geometry>
+      <material name="little_module1___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module1_dummy_link">
+    <inertial>
+      <origin xyz="-0.00146131369472048 0.000201870283507455 -0.00283550060362608" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705179e-09" ixz="-4.82976525885559e-09" iyy="5.88144881419791e-08" iyz="3.56234285318554e-10" izz="1.05520720481508e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module1___unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module2_base_link">
+    <inertial>
+      <origin xyz="-0.000397243037985137 -0.000299123988951571 0.0268900174967925" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0392907478850212"/>
+      <inertia ixx="6.49315163386437e-06" ixy="-1.58700153015025e-07" ixz="1.07943557378575e-07" iyy="7.59585884582494e-06" iyz="-1.02493309535865e-09" izz="5.32693747823652e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module2___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module2_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311372 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.015679495466009"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828607e-09" ixz="1.04881203366641e-08" iyy="2.26742863290264e-06" iyz="5.68818291644029e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="little_module2___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module2_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592702 -0.00283550060370832" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446753e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914748e-09" iyy="5.88144881419792e-08" iyz="3.56234285325651e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module2___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module3_base_link">
+    <inertial>
+      <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0388983022333583"/>
+      <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module3___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module3_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0156794954660089"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="little_module3___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module3_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module3___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="little_module4_base_link">
+    <inertial>
+      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0143355339373342"/>
+      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="little_module4___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module1_base_link">
+    <inertial>
+      <origin xyz="-0.000213433946328543 -0.000522257566248314 0.010512356078851" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119791718336502"/>
+      <inertia ixx="1.31621870893497e-06" ixy="-5.13940617703683e-09" ixz="6.92655022774858e-09" iyy="1.42670892278346e-06" iyz="5.85355266632325e-09" izz="1.57468742862286e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module1___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module1_link1">
+    <inertial>
+      <origin xyz="2.40548098907604e-05 0.0170200166175038 0.00743211422338727" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0528420021206123"/>
+      <inertia ixx="8.46927525862569e-06" ixy="3.77104103813554e-08" ixz="-2.40264131836263e-09" iyy="9.18514204610879e-06" iyz="3.33117292501083e-07" izz="7.42897064027825e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module1___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module1_link2">
+    <inertial>
+      <origin xyz="-0.000799904651096249 0.000126545018078978 0.0439031855091127" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0184890044461961"/>
+      <inertia ixx="3.86018266499349e-06" ixy="-2.57346007074634e-09" ixz="-1.33830705751634e-08" iyy="3.71216828080987e-06" iyz="1.02631852497554e-09" izz="3.85438258007771e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module1___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module1_dummy_link">
+    <inertial>
+      <origin xyz="-0.00146131369472048 0.000201870283507455 -0.00283550060362608" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705179e-09" ixz="-4.82976525885559e-09" iyy="5.88144881419791e-08" iyz="3.56234285318554e-10" izz="1.05520720481508e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module1___unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module2_base_link">
+    <inertial>
+      <origin xyz="-0.000397243037985137 -0.000299123988951571 0.0268900174967925" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0392907478850212"/>
+      <inertia ixx="6.49315163386437e-06" ixy="-1.58700153015025e-07" ixz="1.07943557378575e-07" iyy="7.59585884582494e-06" iyz="-1.02493309535865e-09" izz="5.32693747823652e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module2___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module2_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311372 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.015679495466009"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828607e-09" ixz="1.04881203366641e-08" iyy="2.26742863290264e-06" iyz="5.68818291644029e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module2___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module2_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592702 -0.00283550060370832" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446753e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914748e-09" iyy="5.88144881419792e-08" iyz="3.56234285325651e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module2___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module3_base_link">
+    <inertial>
+      <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0388983022333583"/>
+      <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module3___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module3_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0156794954660089"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module3___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module3_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module3___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ring_module4_base_link">
+    <inertial>
+      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0143355339373342"/>
+      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="ring_module4___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module1_base_link">
+    <inertial>
+      <origin xyz="-0.000213433946328543 -0.000522257566248314 0.010512356078851" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119791718336502"/>
+      <inertia ixx="1.31621870893497e-06" ixy="-5.13940617703683e-09" ixz="6.92655022774858e-09" iyy="1.42670892278346e-06" iyz="5.85355266632325e-09" izz="1.57468742862286e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module1___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module1_link1">
+    <inertial>
+      <origin xyz="2.40548098907604e-05 0.0170200166175038 0.00743211422338727" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0528420021206123"/>
+      <inertia ixx="8.46927525862569e-06" ixy="3.77104103813554e-08" ixz="-2.40264131836263e-09" iyy="9.18514204610879e-06" iyz="3.33117292501083e-07" izz="7.42897064027825e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module1___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module1_link2">
+    <inertial>
+      <origin xyz="-0.000799904651096249 0.000126545018078978 0.0439031855091127" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0184890044461961"/>
+      <inertia ixx="3.86018266499349e-06" ixy="-2.57346007074634e-09" ixz="-1.33830705751634e-08" iyy="3.71216828080987e-06" iyz="1.02631852497554e-09" izz="3.85438258007771e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module1___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module1_dummy_link">
+    <inertial>
+      <origin xyz="-0.00146131369472048 0.000201870283507455 -0.00283550060362608" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705179e-09" ixz="-4.82976525885559e-09" iyy="5.88144881419791e-08" iyz="3.56234285318554e-10" izz="1.05520720481508e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module1___unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module2_base_link">
+    <inertial>
+      <origin xyz="-0.000397243037985137 -0.000299123988951571 0.0268900174967925" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0392907478850212"/>
+      <inertia ixx="6.49315163386437e-06" ixy="-1.58700153015025e-07" ixz="1.07943557378575e-07" iyy="7.59585884582494e-06" iyz="-1.02493309535865e-09" izz="5.32693747823652e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module2___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module2_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311372 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.015679495466009"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828607e-09" ixz="1.04881203366641e-08" iyy="2.26742863290264e-06" iyz="5.68818291644029e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module2___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module2_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592702 -0.00283550060370832" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446753e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914748e-09" iyy="5.88144881419792e-08" iyz="3.56234285325651e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module2___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module3_base_link">
+    <inertial>
+      <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0388983022333583"/>
+      <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module3___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module3_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0156794954660089"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module3___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module3_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module3___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middle_module4_base_link">
+    <inertial>
+      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0143355339373342"/>
+      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="middle_module4___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module1_base_link">
+    <inertial>
+      <origin xyz="-0.000213433946328543 -0.000522257566248314 0.010512356078851" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0119791718336502"/>
+      <inertia ixx="1.31621870893497e-06" ixy="-5.13940617703683e-09" ixz="6.92655022774858e-09" iyy="1.42670892278346e-06" iyz="5.85355266632325e-09" izz="1.57468742862286e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module1___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module1_link1">
+    <inertial>
+      <origin xyz="2.40548098907604e-05 0.0170200166175038 0.00743211422338727" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0528420021206123"/>
+      <inertia ixx="8.46927525862569e-06" ixy="3.77104103813554e-08" ixz="-2.40264131836263e-09" iyy="9.18514204610879e-06" iyz="3.33117292501083e-07" izz="7.42897064027825e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="index_module1___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module1_link2">
+    <inertial>
+      <origin xyz="-0.000799904651096249 0.000126545018078978 0.0439031855091127" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0184890044461961"/>
+      <inertia ixx="3.86018266499349e-06" ixy="-2.57346007074634e-09" ixz="-1.33830705751634e-08" iyy="3.71216828080987e-06" iyz="1.02631852497554e-09" izz="3.85438258007771e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.dae"/>
+      </geometry>
+      <material name="index_module1___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/link2_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module1_dummy_link">
+    <inertial>
+      <origin xyz="-0.00146131369472048 0.000201870283507455 -0.00283550060362608" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705179e-09" ixz="-4.82976525885559e-09" iyy="5.88144881419791e-08" iyz="3.56234285318554e-10" izz="1.05520720481508e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module1___unnamed_material_4"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cross_module_cover_invert_50mm/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module2_base_link">
+    <inertial>
+      <origin xyz="-0.000397243037985137 -0.000299123988951571 0.0268900174967925" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0392907478850212"/>
+      <inertia ixx="6.49315163386437e-06" ixy="-1.58700153015025e-07" ixz="1.07943557378575e-07" iyy="7.59585884582494e-06" iyz="-1.02493309535865e-09" izz="5.32693747823652e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module2___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module2_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311372 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.015679495466009"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828607e-09" ixz="1.04881203366641e-08" iyy="2.26742863290264e-06" iyz="5.68818291644029e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="index_module2___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module2_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592702 -0.00283550060370832" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446753e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914748e-09" iyy="5.88144881419792e-08" iyz="3.56234285325651e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module2___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_0deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module3_base_link">
+    <inertial>
+      <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0388983022333583"/>
+      <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module3___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module3_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0156794954660089"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="index_module3___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module3_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module3___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="index_module4_base_link">
+    <inertial>
+      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0143355339373342"/>
+      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="index_module4___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module1_base_link">
+    <inertial>
+      <origin xyz="-0.000234526751972131 -0.00028602879195132 0.00492715673473502" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00883872367866773"/>
+      <inertia ixx="8.44969262482198e-07" ixy="-2.38438590170593e-09" ixz="4.75238560676722e-09" iyy="8.63389925030388e-07" iyz="5.42634773688696e-09" izz="1.43408773061232e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cm_module/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module1___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cm_module/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module1_link1">
+    <inertial>
+      <origin xyz="0.0122754950678387 0.00451490759273611 0.0192976588266299" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0525185279217828"/>
+      <inertia ixx="1.20898118628892e-05" ixy="6.79207945311754e-07" ixz="7.33692665286359e-07" iyy="1.05211895809663e-05" iyz="2.1948178305605e-07" izz="1.33437679174632e-05"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cm_module/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module1___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cm_module/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module1_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613152281131 0.000201870812535348 -0.00283550672359347" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131294858172581"/>
+      <inertia ixx="5.41755485203049e-08" ixy="1.27650587238183e-09" ixz="-4.82976540098191e-09" iyy="5.88144862744986e-08" iyz="3.56234284775796e-10" izz="1.05520720424416e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_cm_module/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module1___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_cm_module/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module2_base_link">
+    <inertial>
+      <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0388983022333583"/>
+      <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module2___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module2_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0156794954660089"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module2___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module2_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module2___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module3_base_link">
+    <inertial>
+      <origin xyz="-0.000401252669389229 -0.000241503883848603 0.0265833789284656" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0388983022333583"/>
+      <inertia ixx="6.28968153745185e-06" ixy="-1.58891717516252e-07" ixz="1.06958872572826e-07" iyy="7.30853508101172e-06" iyz="2.75384527151901e-08" izz="5.23270325750328e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module3___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module3_link1">
+    <inertial>
+      <origin xyz="0.00050176181802974 0.000131881332311375 0.0261566388593281" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0156794954660089"/>
+      <inertia ixx="2.36251577154097e-06" ixy="-2.28902268828719e-09" ixz="1.04881203366649e-08" iyy="2.26742863290264e-06" iyz="5.68818291644002e-09" izz="3.78920030884968e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module3___unnamed_material_2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/link1_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module3_dummy_link">
+    <inertial>
+      <origin xyz="-0.0014613136949066 0.000201870283592712 -0.00283550060370834" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.00131295075943631"/>
+      <inertia ixx="5.41755504446752e-08" ixy="1.27650591704971e-09" ixz="-4.82976525914747e-09" iyy="5.88144881419792e-08" iyz="3.56234285325664e-10" izz="1.05520720481453e-07"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module3___unnamed_material_3"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://screw_26mmhinge_module_cover_40deg/meshes/dummy_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_module4_base_link">
+    <inertial>
+      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0143355339373342"/>
+      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.dae"/>
+      </geometry>
+      <material name="thumb_module4___unnamed_material_1"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://fingertip/meshes/base_link_remeshed.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="dummy_joint1" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link1"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="-0.134 0.0 0.104" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint2" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link2"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="-0.0790000000000001 0.0 0.148" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint3" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link3"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="-0.024 0.0 0.169" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint4" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link4"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0309999999999999 0.0 0.138" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="dummy_joint5" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="base_link"/>
+    <child link="dummy_link5"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.018463196704848 0.0 0.0524638930461059" rpy="3.14159265358979 0.6356359574700542 3.14159265358978"/>
+  </joint>
+  <joint name="dummy_link1_to_little_module1_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="dummy_link1"/>
+    <child link="little_module1_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 -3.1415926535895866"/>
+  </joint>
+  <joint name="little_module1_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-1.5" upper="1.5"/>
+    <parent link="little_module1_base_link"/>
+    <child link="little_module1_link1"/>
+    <axis xyz=" 0. -1.  0."/>
+    <origin xyz="0.0 0.0 0.0349999999999999" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="little_module1_joint2" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.57"/>
+    <parent link="little_module1_link1"/>
+    <child link="little_module1_link2"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="little_module1_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="little_module1_link2"/>
+    <child link="little_module1_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0569999998698719" rpy="0.0 -0.0 -1.5707963267949006"/>
+  </joint>
+  <joint name="little_module1_dummy_link_to_little_module2_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="little_module1_dummy_link"/>
+    <child link="little_module2_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="-0.0 -0.0 -1.5707963267948963"/>
+  </joint>
+  <joint name="little_module2_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="0.0" upper="1.78"/>
+    <parent link="little_module2_base_link"/>
+    <child link="little_module2_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="little_module2_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="little_module2_link1"/>
+    <child link="little_module2_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="little_module2_dummy_link_to_little_module3_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="little_module2_dummy_link"/>
+    <child link="little_module3_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="little_module3_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+    <parent link="little_module3_base_link"/>
+    <child link="little_module3_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="little_module3_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="little_module3_link1"/>
+    <child link="little_module3_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="little_module3_dummy_link_to_little_module4_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="little_module3_dummy_link"/>
+    <child link="little_module4_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="dummy_link2_to_ring_module1_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="dummy_link2"/>
+    <child link="ring_module1_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 -3.1415926535895866"/>
+  </joint>
+  <joint name="ring_module1_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-1.5" upper="1.5"/>
+    <parent link="ring_module1_base_link"/>
+    <child link="ring_module1_link1"/>
+    <axis xyz=" 0. -1.  0."/>
+    <origin xyz="0.0 0.0 0.0349999999999999" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="ring_module1_joint2" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.57"/>
+    <parent link="ring_module1_link1"/>
+    <child link="ring_module1_link2"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="ring_module1_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="ring_module1_link2"/>
+    <child link="ring_module1_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0569999998698719" rpy="0.0 -0.0 -1.5707963267949006"/>
+  </joint>
+  <joint name="ring_module1_dummy_link_to_ring_module2_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="ring_module1_dummy_link"/>
+    <child link="ring_module2_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="-0.0 -0.0 -1.5707963267948963"/>
+  </joint>
+  <joint name="ring_module2_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="0.0" upper="1.78"/>
+    <parent link="ring_module2_base_link"/>
+    <child link="ring_module2_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="ring_module2_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="ring_module2_link1"/>
+    <child link="ring_module2_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="ring_module2_dummy_link_to_ring_module3_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="ring_module2_dummy_link"/>
+    <child link="ring_module3_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="ring_module3_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+    <parent link="ring_module3_base_link"/>
+    <child link="ring_module3_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="ring_module3_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="ring_module3_link1"/>
+    <child link="ring_module3_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="ring_module3_dummy_link_to_ring_module4_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="ring_module3_dummy_link"/>
+    <child link="ring_module4_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="dummy_link3_to_middle_module1_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="dummy_link3"/>
+    <child link="middle_module1_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 -3.1415926535895866"/>
+  </joint>
+  <joint name="middle_module1_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-1.5" upper="1.5"/>
+    <parent link="middle_module1_base_link"/>
+    <child link="middle_module1_link1"/>
+    <axis xyz=" 0. -1.  0."/>
+    <origin xyz="0.0 0.0 0.0349999999999999" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middle_module1_joint2" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.57"/>
+    <parent link="middle_module1_link1"/>
+    <child link="middle_module1_link2"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middle_module1_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="middle_module1_link2"/>
+    <child link="middle_module1_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0569999998698719" rpy="0.0 -0.0 -1.5707963267949006"/>
+  </joint>
+  <joint name="middle_module1_dummy_link_to_middle_module2_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="middle_module1_dummy_link"/>
+    <child link="middle_module2_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="-0.0 -0.0 -1.5707963267948963"/>
+  </joint>
+  <joint name="middle_module2_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="0.0" upper="1.78"/>
+    <parent link="middle_module2_base_link"/>
+    <child link="middle_module2_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middle_module2_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="middle_module2_link1"/>
+    <child link="middle_module2_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="middle_module2_dummy_link_to_middle_module3_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="middle_module2_dummy_link"/>
+    <child link="middle_module3_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="middle_module3_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+    <parent link="middle_module3_base_link"/>
+    <child link="middle_module3_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middle_module3_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="middle_module3_link1"/>
+    <child link="middle_module3_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="middle_module3_dummy_link_to_middle_module4_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="middle_module3_dummy_link"/>
+    <child link="middle_module4_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="dummy_link4_to_index_module1_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="dummy_link4"/>
+    <child link="index_module1_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 -3.1415926535895866"/>
+  </joint>
+  <joint name="index_module1_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-1.5" upper="1.5"/>
+    <parent link="index_module1_base_link"/>
+    <child link="index_module1_link1"/>
+    <axis xyz=" 0. -1.  0."/>
+    <origin xyz="0.0 0.0 0.0349999999999999" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="index_module1_joint2" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.57"/>
+    <parent link="index_module1_link1"/>
+    <child link="index_module1_link2"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="index_module1_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="index_module1_link2"/>
+    <child link="index_module1_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0569999998698719" rpy="0.0 -0.0 -1.5707963267949006"/>
+  </joint>
+  <joint name="index_module1_dummy_link_to_index_module2_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="index_module1_dummy_link"/>
+    <child link="index_module2_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="-0.0 -0.0 -1.5707963267948963"/>
+  </joint>
+  <joint name="index_module2_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="0.0" upper="1.78"/>
+    <parent link="index_module2_base_link"/>
+    <child link="index_module2_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="index_module2_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="index_module2_link1"/>
+    <child link="index_module2_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="index_module2_dummy_link_to_index_module3_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="index_module2_dummy_link"/>
+    <child link="index_module3_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="index_module3_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+    <parent link="index_module3_base_link"/>
+    <child link="index_module3_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="index_module3_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="index_module3_link1"/>
+    <child link="index_module3_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="index_module3_dummy_link_to_index_module4_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="index_module3_dummy_link"/>
+    <child link="index_module4_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="dummy_link5_to_thumb_module1_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="dummy_link5"/>
+    <child link="thumb_module1_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_module1_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-2.356" upper="2.356"/>
+    <parent link="thumb_module1_base_link"/>
+    <child link="thumb_module1_link1"/>
+    <axis xyz=" 0.  0. -1."/>
+    <origin xyz="0.0 0.0 0.012" rpy="0.0 -0.0 3.1415853071795867"/>
+  </joint>
+  <joint name="thumb_module1_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="thumb_module1_link1"/>
+    <child link="thumb_module1_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0436109777441064 0.0 0.0270612891532417" rpy="-1.2930552091209002 -0.0509380987630674 -1.5853120014244804"/>
+  </joint>
+  <joint name="thumb_module1_dummy_link_to_thumb_module2_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="thumb_module1_dummy_link"/>
+    <child link="thumb_module2_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_module2_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+    <parent link="thumb_module2_base_link"/>
+    <child link="thumb_module2_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_module2_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="thumb_module2_link1"/>
+    <child link="thumb_module2_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="thumb_module2_dummy_link_to_thumb_module3_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="thumb_module2_dummy_link"/>
+    <child link="thumb_module3_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <joint name="thumb_module3_joint1" type="revolute">
+    <limit effort="0.0" velocity="0.0" lower="-0.698" upper="1.78"/>
+    <parent link="thumb_module3_base_link"/>
+    <child link="thumb_module3_link1"/>
+    <axis xyz="-1.  0.  0."/>
+    <origin xyz="0.0 0.0 0.04" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_module3_dummy_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="thumb_module3_link1"/>
+    <child link="thumb_module3_dummy_link"/>
+    <axis xyz="0. 0. 0."/>
+    <origin xyz="0.0 0.0 0.033" rpy="0.0 -0.0 -1.57079632679492"/>
+  </joint>
+  <joint name="thumb_module3_dummy_link_to_thumb_module4_base_link_joint" type="fixed">
+    <limit effort="0.0" velocity="0.0"/>
+    <parent link="thumb_module3_dummy_link"/>
+    <child link="thumb_module4_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 1.5707963267948963"/>
+  </joint>
+  <material name="__unnamed_material_1">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="__unnamed_material_2">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_4">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_5">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="__unnamed_material_6">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="little_module1___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="little_module1___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="little_module1___unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="little_module1___unnamed_material_4">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="little_module2___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="little_module2___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="little_module2___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="little_module3___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="little_module3___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="little_module3___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="little_module4___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="ring_module1___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="ring_module1___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="ring_module1___unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="ring_module1___unnamed_material_4">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="ring_module2___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="ring_module2___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="ring_module2___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="ring_module3___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="ring_module3___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="ring_module3___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="ring_module4___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="middle_module1___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="middle_module1___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="middle_module1___unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="middle_module1___unnamed_material_4">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="middle_module2___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="middle_module2___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="middle_module2___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="middle_module3___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="middle_module3___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="middle_module3___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="middle_module4___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="index_module1___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="index_module1___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="index_module1___unnamed_material_3">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="index_module1___unnamed_material_4">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="index_module2___unnamed_material_1">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+  <material name="index_module2___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="index_module2___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="index_module3___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="index_module3___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="index_module3___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="index_module4___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="thumb_module1___unnamed_material_1">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="thumb_module1___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="thumb_module1___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="thumb_module2___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="thumb_module2___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="thumb_module2___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="thumb_module3___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+  <material name="thumb_module3___unnamed_material_2">
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+  </material>
+  <material name="thumb_module3___unnamed_material_3">
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        "/>
+  </material>
+  <material name="thumb_module4___unnamed_material_1">
+    <color rgba="1.         0.6627451  0.54117647 1.        "/>
+  </material>
+</robot>
