@@ -30,8 +30,9 @@
     (setq servo-state-list nil)
     (dolist (servo (send msg :servos))
       (let ((name (send servo :name))
-            (err (send servo :error)))
-        (setq servo-state-list (cons (cons name err) servo-state-list))
+            (err (send servo :error))
+            (pos (send servo :position)))
+        (setq servo-state-list (cons (cons name (cons err pos)) servo-state-list))
         ))
     )
 
@@ -49,6 +50,10 @@
     (when off-list
       (send *ri* :servo-off :names off-list))
     )
+
+  (:flexion
+   (idx)
+   )
 
   (:button-cb
    (msg)
