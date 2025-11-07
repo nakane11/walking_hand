@@ -1,5 +1,4 @@
 (require "package://kxreus/euslisp/kxr-interface.l")
-
 (kxr-init :create-viewer nil)
 
 (setq walk-angle
