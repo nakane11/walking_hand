@@ -1,3 +1,5 @@
+#!/usr/bin/env roseus
+
 (require "package://kxreus/euslisp/kxr-interface.l")
 (ros::roseus-add-msgs "kxr_controller")
 (ros::roseus-add-msgs "std_msgs")
