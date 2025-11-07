@@ -43,7 +43,6 @@
 
   (:switch-servo
    (idx)
-   (print idx)
    (setq on-list nil)
    (setq off-list nil)
     (dolist (joint (cdr (assoc idx index2joint)))
