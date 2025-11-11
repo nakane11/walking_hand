@@ -28,6 +28,7 @@
     )
   )
 
+;; BOW
 (defun play-curtsy-motion (&key (base-pose *stand-pose*) (duration 1000))
   (send *ri* :angle-vector-sequence
     (list #f(89.9438 -15.4575 6.04126 34.155 10.9013 53.1563 49.9163 -3.03749 -0.06749 64.6313 29.5988 -31.0162 1.38376 52.11 35.7413 -45.6637 8.94376 61.695 24.5025)

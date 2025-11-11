@@ -14,7 +14,9 @@
      (defun ,name ()
        ;; 1. 遷移
        (unless (eq *current-state* ,state-keyword)
+         (ros::ros-info (format nil "Transition: -> ~A" ,state-keyword))
          (progn ,@transition)
+         (ros::ros-info (format nil "Transition: ~A complete." ,state-keyword))
          (setq *current-state* ,state-keyword)
          )
        ;; 2. 持続
@@ -32,8 +34,10 @@
   `(progn
      ;; A. 関数を定義する
      (defun ,name ()
+       (ros::ros-info (format nil "Action: Executing ~A..." ,state-keyword))
        ;; 1. アクションを実行 (ブロッキング)
        (progn ,@body)
+       (ros::ros-info (format nil "Action: ~A finished." ,state-keyword))
        ;; 2. 完了したら、目標状態を *return-state* に戻す
        (setq *target-state* *return-state*)
        (setq *current-state* ,state-keyword)
