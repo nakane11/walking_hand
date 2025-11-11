@@ -1,5 +1,5 @@
 (load "state-machine-utils.l")
-(load "state-machine-functions.l")
+(load "state-machine-executors.l")
 (require "package://kxreus/euslisp/kxr-interface.l")
 (ros::load-ros-manifest "std_msgs")
 
@@ -10,12 +10,12 @@
       ;; ((string= command "SIT")   (setq *target-state* :SITTING))
       ((string= command "STAND") (setq *target-state* :STANDING))
 
-      ;; ;; 一時的状態 (アクション)
-      ;; ((string= command "BOW")
-      ;;  ;; アクションを実行できるかチェック
-      ;;  (when (eq *current-state* :STANDING)
-      ;;    (setq *return-state* *current-state*) ;; 戻り先を記憶
-      ;;    (setq *target-state* :BOW)))         ;; アクションをターゲットに
+      ;; 一時的状態 (アクション)
+      ((string= command "BOW")
+       ;; アクションを実行できるかチェック
+       (when (eq *current-state* :STANDING)
+         (setq *return-state* *current-state*) ;; 戻り先を記憶
+         (setq *target-state* :BOW)))         ;; アクションをターゲットに
 
       (t (warn "Unknown command: ~A~%" command))
       )))
