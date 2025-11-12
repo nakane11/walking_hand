@@ -18,7 +18,7 @@ class ButtonGridGUI:
         button_labels = [
             ["SIT", "", "", ""],
             ["STAND", "BOW", "", ""],
-            ["PAUSE", "STAND_WALK", "", ""],
+            ["PAUSE", "STAND_WALK", "STAND_ROTATE", ""],
             ["", "", "", ""]
         ]
 

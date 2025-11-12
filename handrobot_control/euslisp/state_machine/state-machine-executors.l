@@ -61,3 +61,28 @@
   )
   :persistent ()
 )
+
+(define-state-executor execute-state-rotate :STAND_ROTATE
+  :transition (
+    (unless (eq *current-state* :PAUSED)
+      (send *ri* :angle-vector (elt *rotate-angle-part2* 3) 1000)
+      (send *ri* :wait-interpolation)
+      (setq *rotate-next-part* :PART1)
+      )
+    )
+  :persistent (
+    (cond
+      ((eq *rotate-next-part* :PART1)
+       (send *ri* :angle-vector-sequence *rotate-angle-part1*
+             (make-list (length *rotate-angle-part1*) :initial-element 500))
+       (send *ri* :wait-interpolation)
+       (setq *rotate-next-part* :PART2))
+
+      ((eq *rotate-next-part* :PART2)
+       (send *ri* :angle-vector-sequence *rotate-angle-part2*
+             (make-list (length *rotate-angle-part2*) :initial-element 500))
+       (send *ri* :wait-interpolation)
+       (setq *rotate-next-part* :PART1))
+      )
+  )
+)
