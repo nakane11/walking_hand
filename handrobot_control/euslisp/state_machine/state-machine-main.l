@@ -9,6 +9,10 @@
       ;; 持続的状態
       ;; ((string= command "SIT")   (setq *target-state* :SITTING))
       ((string= command "STAND") (setq *target-state* :STANDING))
+      ((string= command "PAUSE") (setq *target-state* :PAUSED))
+      ((string= command "STAND_WALK")
+        (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED))
+          (setq *target-state* :STAND_WALK)))
 
       ;; 一時的状態 (アクション)
       ((string= command "BOW")

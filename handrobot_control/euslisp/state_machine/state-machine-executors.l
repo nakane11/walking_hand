@@ -13,18 +13,46 @@
     (send *ri* :angle-vector *stand-pose* 2000)
     (send *ri* :wait-interpolation)
     (setq *idle-time* 0.0)
-  )
+    )
   :persistent (
     (standing-idle-frame)
+    )
   )
+)
+
+(define-state-executor execute-state-pause :PAUSED
+  :transition ()
+  :persistent ()
 )
 
 (define-action-executor execute-action-bow :BOW
   :body (
     (play-curtsy-motion :base-pose *stand-pose* :duration 1000)
-    (setq *idle-time* 0.0)
   )
+)
+
+(define-state-executor execute-state-walk :STAND_WALK
+  :transition (
+    (unless (eq *current-state* :PAUSED)
+      (setq *walk-next-part* :PART1)
+      )
+    )
+  :persistent (
+    (cond
+      ((eq *walk-next-part* :PART1)
+       (send *ri* :angle-vector-sequence *walk-angle-part1*
+             (make-list (length *walk-angle-part1*) :initial-element 600))
+       (send *ri* :wait-interpolation)
+       (setq *walk-next-part* :PART2))
+
+      ((eq *walk-next-part* :PART2)
+       (send *ri* :angle-vector-sequence *walk-angle-part2*
+             (make-list (length *walk-angle-part2*) :initial-element 600))
+       (send *ri* :wait-interpolation)
+       (setq *walk-next-part* :PART1))
+      )
   )
+)
 
 ;; (define-state-executor execute-state-sit :SITTING
 ;;   :transition (
