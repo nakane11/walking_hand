@@ -16,10 +16,10 @@ class ButtonGridGUI:
 
         # ボタンのラベルを定義（4x4の2次元リスト）
         button_labels = [
-            ["Button 1", "Button 2", "Button 3", "Button 4"],
-            ["Forward", "Backward", "Left", "Right"],
-            ["Start", "Stop", "Pause", "Resume"],
-            ["Mode A", "Mode B", "Mode C", "Mode D"]
+            ["SIT", "", "", ""],
+            ["STAND", "BOW", "", ""],
+            ["PAUSE", "STAND_WALK", "", ""],
+            ["", "", "", ""]
         ]
 
         # 4x4のグリッド状にボタンを作成

@@ -7,7 +7,9 @@
   (let ((command (send msg :data)))
     (cond
       ;; 持続的状態
-      ;; ((string= command "SIT")   (setq *target-state* :SITTING))
+      ((string= command "SIT")
+        (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED))
+          (setq *target-state* :SITTING)))
       ((string= command "STAND") (setq *target-state* :STANDING))
       ((string= command "PAUSE") (setq *target-state* :PAUSED))
       ((string= command "STAND_WALK")

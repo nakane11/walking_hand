@@ -54,11 +54,10 @@
   )
 )
 
-;; (define-state-executor execute-state-sit :SITTING
-;;   :transition (
-;;     (send *ri* :angle-vector *sit-pose* 2000)
-;;     (send *ri* :wait-interpolation)
-;;     (send *ri* :servo-off)
-;;   )
-;;   :persistent ()
-;; )
+(define-state-executor execute-state-sit :SITTING
+  :transition (
+    (stand-to-sit)
+    (send *ri* :servo-off)
+  )
+  :persistent ()
+)
