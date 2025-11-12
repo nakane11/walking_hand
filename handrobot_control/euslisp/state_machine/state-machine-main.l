@@ -40,5 +40,5 @@
     (ros::sleep)
   ))
 
-;; (kxr-init :create-viewer nil)
-;; (demo-main-loop)
+(kxr-init :create-viewer nil)
+(demo-main-loop)

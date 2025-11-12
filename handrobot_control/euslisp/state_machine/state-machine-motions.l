@@ -4,7 +4,7 @@
 (defvar *idle-time* 0.0)
 (defvar *idle-time-period* (* 20 pi))
 (defun standing-idle-frame ()
-  (setq *idle-time* (mod (+ *idle-time* 0.4) *idle-time-period*))
+  (setq *idle-time* (mod (+ *idle-time* 1.0) *idle-time-period*))
   (let ((current-pose (copy-seq *stand-pose*))
         (pitch-amplitude 10.0) (roll-amplitude 5.0)
         (pitch-joints '(1 4 8 12 16)) (roll-joints '(3 15)))
@@ -24,7 +24,8 @@
       (setf (elt current-pose 3)  (+ (elt *stand-pose* 3)  (* roll-amplitude outer-wave)))       ;; INDEX0
       (setf (elt current-pose 15) (+ (elt *stand-pose* 15) (* (* -1.0 roll-amplitude) outer-wave)))) ;; LITTLE0 (逆位相)
 
-    (send *ri* :angle-vector current-pose 20)
+    (send *ri* :angle-vector current-pose 0.1 :default-controller 0 :min-time 0.1)
+    (send *ri* :wait-interpolation)
     )
   )
 
