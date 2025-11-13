@@ -1,9 +1,9 @@
 (defvar *state-dispatch-table* (make-hash-table :test 'eq))
 
 ;; --- グローバル変数 ---
-(defvar *target-state* :STANDING)  ;; 目標の状態 (SIT, STAND, BOW...)
+(defvar *target-state* :SITTING)  ;; 目標の状態 (SIT, STAND, BOW...)
 (defvar *current-state* :UNKNOWN) ;; 現在の「持続的」状態 (SIT, STAND)
-(defvar *return-state* :STANDING)  ;; アクション完了後に戻る状態
+(defvar *return-state* :SITTING)  ;; アクション完了後に戻る状態
 
 (defmacro define-state-executor (name state-keyword &key transition persistent)
   "状態実行関数を定義し、ディスパッチテーブルに登録するマクロ。"

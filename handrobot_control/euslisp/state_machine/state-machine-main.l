@@ -18,6 +18,8 @@
       ((string= command "STAND_ROTATE")
         (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED))
           (setq *target-state* :STAND_ROTATE)))
+      ;; ((string= command "FLEXION")
+      ;;  (setq *target-state* :FLEXION))
 
       ;; 一時的状態 (アクション)
       ((string= command "BOW")
@@ -25,6 +27,10 @@
        (when (eq *current-state* :STANDING)
          (setq *return-state* *current-state*) ;; 戻り先を記憶
          (setq *target-state* :BOW)))         ;; アクションをターゲットに
+
+      ((member command *finger-names* :test #'string=)
+       (setq *target-finger* (intern command "KEYWORD"))
+       (print *target-finger*))
 
       (t (warn "Unknown command: ~A~%" command))
       )))
@@ -40,9 +46,9 @@
           (funcall executor-func-name)
 
           ;; もし見つからなかったら (起動時や未定義のコマンド)
-          (when (not (eq *target-state* :STANDING))
-             (warn "No executor for ~A. Defaulting to STANDING." *target-state*)
-             (setq *target-state* :STANDING))
+          (when (not (eq *target-state* :SITTING))
+             (warn "No executor for ~A. Defaulting to SITTING." *target-state*)
+             (setq *target-state* :SITTING))
           ))
 
     (ros::spin-once)
@@ -50,4 +56,5 @@
   ))
 
 (kxr-init :create-viewer nil)
+(send *ri* :send-stretch :value 127)
 (demo-main-loop)

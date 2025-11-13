@@ -10,8 +10,11 @@
         (return))
       (ros::spin-once)
       (ros::sleep))
-    (send *ri* :angle-vector *stand-pose* 2000)
-    (send *ri* :wait-interpolation)
+    (if (eq *current-state* :SITTING)
+        (sit-to-stand)
+      (progn
+        (send *ri* :angle-vector *stand-pose* 2000)
+        (send *ri* :wait-interpolation)))
     (setq *idle-time* 0.0)
     )
   :persistent (
@@ -56,7 +59,8 @@
 
 (define-state-executor execute-state-sit :SITTING
   :transition (
-    (stand-to-sit)
+    (when (eq *current-state* :STANDING)
+      (stand-to-sit))
     (send *ri* :servo-off)
   )
   :persistent ()
@@ -86,3 +90,65 @@
       )
   )
 )
+
+;; (define-state-executor execute-state-flexion :FLEXION
+;;   :transition (
+;;     (setq *current-pose-vector* (send *ri* :state :potentio-vector))
+;;   )
+;;   :persistent (
+;;     (let* ((target-joint-names (gethash *target-finger* *finger-joint-map*))
+;;            (av (copy-seq *current-pose-vector*))
+;;            (command-needed nil)
+;;            (all-joints-at-limit t) ;; 全関節が限界か？ (フラグ)
+;;            (all-joints-in-error t) ;; 全関節がエラーか？ (フラグ)
+;;            )
+
+;;       (dolist (joint-name target-joint-names)
+;;         ;; 0番(開閉)ジョイントは除外
+;;         (unless (string= (subseq joint-name (- (length joint-name) 1)) "0")
+;;           (let ((err (cdr (assoc joint-name servo-state-list :test #'string=)))
+;;                 (j-id (position joint-name robot-joint-list
+;;                                 :test #'string=
+;;                                 :key #'(lambda (j-obj) (send j-obj :name)))))
+
+;;             ;; 1. 関節が正常かチェック
+;;             (if (and err (<= err 2) j-id)
+;;                 ;; 正常
+;;                 (progn
+;;                   (setq all-joints-in-error nil) ;; 少なくとも1つは正常
+;;                   (let ((curr-angle (aref av j-id)))
+;;                     ;; 2. 角度が限界かチェック
+;;                     (if (< curr-angle *flex-limit*)
+;;                         ;; 限界ではない -> 曲げる
+;;                         (progn
+;;                           (setq all-joints-at-limit nil) ;; 少なくとも1つは限界でない
+;;                           (setq new-angle (min *flex-limit* (+ curr-angle *flex-increment*)))
+;;                           (setf (aref av j-id) new-angle)
+;;                           (setq command-needed t)
+;;                           )
+;;                         ;; 限界 (90度) に達している
+;;                         t
+;;                         )))
+;;                 ;; エラー (err > 2 または j-id なし)
+;;                 t
+;;                 ))))
+
+;;       ;; 3. コマンド送信と状態保持
+;;       (when command-needed
+;;         (send *ri* :angle-vector av 60)
+;;         (setq *current-pose-vector* av) ;; コマンドしたポーズを保存
+;;         )
+
+;;       ;; 4. 終了判定
+;;       (when (or all-joints-at-limit all-joints-in-error)
+;;         (setq *target-state* :PAUSED)
+;;         )
+;;       ))
+;;   )
+
+;; (define-state-executor execute-state-extension :EXTENSION
+;;   :transition
+
+;;   :persistant
+
+;;   )
