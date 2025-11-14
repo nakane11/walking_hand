@@ -18,8 +18,8 @@
       ((string= command "STAND_ROTATE")
         (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED))
           (setq *target-state* :STAND_ROTATE)))
-      ;; ((string= command "FLEXION")
-      ;;  (setq *target-state* :FLEXION))
+      ((string= command "FLEXION")
+       (setq *target-state* :FLEXION))
 
       ;; 一時的状態 (アクション)
       ((string= command "BOW")
@@ -33,7 +33,8 @@
        (print *target-finger*))
 
       (t (warn "Unknown command: ~A~%" command))
-      )))
+      )
+    ))
 
 ;; --- 4. メインループ ---
 (defun demo-main-loop ()
