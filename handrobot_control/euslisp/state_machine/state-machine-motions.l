@@ -126,7 +126,7 @@
   (setf (gethash (car pair) *finger-joint-map*) (cdr pair)))
 (defvar *target-finger* :INDEX)
 (defvar *current-pose-vector* nil)
-(defvar *flex-increment* 1.0)
+(defvar *flex-increment* 3.0)
 (defvar *flex-limit* 90.0)
 (defvar *servo-state-list* nil)
 (defun servo-state-callback (msg)
@@ -137,3 +137,6 @@
       (setq *servo-state-list* (cons (cons name err) *servo-state-list*))
       )))
 (defvar *servo-subscriber* nil)
+
+(defvar *extend-decrement* 3.0)
+(defvar *extend-limit* 0.0)

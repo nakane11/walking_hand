@@ -20,6 +20,8 @@
           (setq *target-state* :STAND_ROTATE)))
       ((string= command "FLEXION")
        (setq *target-state* :FLEXION))
+      ((string= command "EXTENSION")
+       (setq *target-state* :EXTENSION))
 
       ;; 一時的状態 (アクション)
       ((string= command "BOW")

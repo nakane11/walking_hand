@@ -115,26 +115,30 @@
            (all-joints-in-error t) ;; 全関節がエラーか
            )
       (dolist (joint-name target-joint-names)
-        (unless (string= (subseq joint-name (- (length joint-name) 1)) "0")
-          (let ((err (cdr (assoc joint-name *servo-state-list* :test #'string=)))
-                (j-id (position joint-name (send *robot* :joint-list)
-                                :test #'string=
-                                :key #'(lambda (j-obj) (send j-obj :name)))))
-            ;; 1. 関節が正常かチェック
-            (if (and err (<= err 1.2) j-id)
-                (progn
-                  (setq all-joints-in-error nil)
-                  (let ((curr-angle (aref av j-id)))
-                    ;; 2. 角度が限界かチェック
-                    (if (< curr-angle *flex-limit*)
-                        (progn
-                          (setq all-joints-at-limit nil)
-                          (setq new-angle (min *flex-limit*
-                                               (+ curr-angle *flex-increment*)))
-                          (setf (aref av j-id) new-angle)
-                          (setq command-needed t))
-                        t)))
-                t))))
+        (let ((joint-suffix (subseq joint-name (- (length joint-name) 1))))
+          (unless (string= joint-suffix "0")
+            (let ((err (cdr (assoc joint-name *servo-state-list* :test #'string=)))
+                  (j-id (position joint-name (send *robot* :joint-list)
+                                  :test #'string=
+                                  :key #'(lambda (j-obj) (send j-obj :name)))))
+              ;; 1. 関節が正常かチェック
+              (when (and err (<= err 1.6) j-id)
+                (setq all-joints-in-error nil)
+                (let ((curr-angle (aref av j-id)))
+                  ;; 2. 角度が限界かチェック
+                  (when (< curr-angle *flex-limit*)
+                    (setq all-joints-at-limit nil)
+                    (let* ((increment-ratio (cond
+                                             ((string= joint-suffix "1") 1.0) ;; 根元: 100%
+                                             ((string= joint-suffix "2") 0.8) ;; 中間: 80%
+                                             ((string= joint-suffix "3") 0.6) ;; 先端: 60%
+                                             (t 1.0)))
+                           (increment-amount (* *flex-increment* increment-ratio)))
+                      (setq new-angle (min *flex-limit*
+                                           (+ curr-angle increment-amount))))
+                    (setf (aref av j-id) new-angle)
+                    (setq command-needed t))))
+              ))))
       ;; 3. コマンド送信と状態保持
       (when command-needed
         (send *ri* :angle-vector av 0.1 :default-controller 0 :min-time 0.1)
@@ -147,9 +151,43 @@
       ))
   )
 
-;; (define-state-executor execute-state-extension :EXTENSION
-;;   :transition
+(define-state-executor execute-state-extension :EXTENSION
+  :transition (
+    (send *ri* :servo-on)
+    (while t
+      (setq msg (one-shot-subscribe "/fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
+      (when (every #'identity (send msg :servo_on_states))
+        (return))
+      (ros::spin-once)
+      (ros::sleep))
+    (setq *current-pose-vector* (send *ri* :state :potentio-vector))
+    )
+  :persistent (
+    (let* ((target-joint-names (gethash *target-finger* *finger-joint-map*))
+           (av (copy-seq *current-pose-vector*))
+           (command-needed nil)
+           (all-joints-at-limit t)
+           )
+      (dolist (joint-name target-joint-names)
+        (unless (string= (subseq joint-name (- (length joint-name) 1)) "0")
+          (let* ((j-id (position joint-name (send *robot* :joint-list)
+                                 :test #'string=
+                                 :key #'(lambda (j-obj) (send j-obj :name))))
+                 (curr-angle (aref av j-id)))
+            (when (> curr-angle *extend-limit*)
+              (setq all-joints-at-limit nil)
+              (setq new-angle (max *extend-limit*
+                                   (- curr-angle *extend-decrement*)))
+              (setf (aref av j-id) new-angle)
+              (setq command-needed t)))))
 
-;;   :persistant
+      (when command-needed
+        (send *ri* :angle-vector av 0.1 :default-controller 0 :min-time 0.1)
+        (send *ri* :wait-interpolation)
+        (setq *current-pose-vector* av))
 
-;;   )
+      (when all-joints-at-limit
+        (send *ri* :cancel-angle-vector)
+        (setq *target-state* :PAUSED))
+      ))
+  )
