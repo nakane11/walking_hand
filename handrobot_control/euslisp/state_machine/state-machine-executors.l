@@ -85,13 +85,13 @@
     (cond
       ((eq *rotate-next-part* :PART1)
        (send *ri* :angle-vector-sequence *rotate-angle-part1*
-             (make-list (length *rotate-angle-part1*) :initial-element 500))
+             (make-list (length *rotate-angle-part1*) :initial-element 450))
        (send *ri* :wait-interpolation)
        (setq *rotate-next-part* :PART2))
 
       ((eq *rotate-next-part* :PART2)
        (send *ri* :angle-vector-sequence *rotate-angle-part2*
-             (make-list (length *rotate-angle-part2*) :initial-element 500))
+             (make-list (length *rotate-angle-part2*) :initial-element 450))
        (send *ri* :wait-interpolation)
        (setq *rotate-next-part* :PART1))
       )
