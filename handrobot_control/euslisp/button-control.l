@@ -112,7 +112,7 @@
 
 
 (ros::roseus "button_control")
-(kxr-init :create-viewer nil)
+(kxr-init :create-viewer nil :controller-timeout 40)
 (setq bc (instance button-control :init))
 (ros::rate 20)
 (do-until-key

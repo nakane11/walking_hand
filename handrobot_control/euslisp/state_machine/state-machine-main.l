@@ -1,3 +1,5 @@
+#!/usr/bin/env roseus
+
 (load "state-machine-utils.l")
 (load "state-machine-executors.l")
 (require "package://kxreus/euslisp/kxr-interface.l")
