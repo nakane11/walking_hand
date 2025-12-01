@@ -96,7 +96,29 @@
        (setq *rotate-next-part* :PART1))
       )
   )
-)
+  )
+
+(define-state-executor execute-state-walk :WHEEL_WALK
+  :transition (
+    (send *ri* :servo-on)
+    (while t
+      (setq msg (one-shot-subscribe "/fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
+      (when (every #'identity (send msg :servo_on_states))
+        (return))
+      (ros::spin-once)
+      (ros::sleep))
+    (unless (eq *current-state* :PAUSED)
+      (send *ri* :angle-vector #f(79.8525 44.3475 6.54751 8.57251 121.973 35.9775 65.205 3.47626 134.899 21.2625 45.6638 2.83501 132.874 16.3013 70.1325 11.8463 109.148 67.0275 55.62) 1000)
+      (send *ri* :wait-interpolation)
+      )
+    )
+  :persistent (
+    (send *ri* :angle-vector-sequence *wheel-walk-angle*
+          (make-list (length *wheel-walk-angle*) :initial-element 500))
+    (send *ri* :wait-interpolation)
+    )
+  )
+
 
 (define-state-executor execute-state-flexion :FLEXION
   :transition (
