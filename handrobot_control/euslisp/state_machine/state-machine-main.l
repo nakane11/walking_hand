@@ -60,6 +60,6 @@
     (ros::sleep)
   ))
 
-(kxr-init :create-viewer nil)
+(kxr-init :create-viewer nil :controller-timeout 40)
 (send *ri* :send-stretch :value 127)
 (demo-main-loop)
