@@ -63,6 +63,8 @@
     (ros::sleep)
   ))
 
-(kxr-init :create-viewer nil :controller-timeout 40)
+(ros::roseus "state_machine_main")
+(setq ns (ros::get-param "~namespace" nil))
+(kxr-init :create-viewer nil :namespace ns :controller-timeout 40)
 (send *ri* :send-stretch :value 127)
 (demo-main-loop)
