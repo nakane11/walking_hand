@@ -44,9 +44,10 @@
     ))
 
 ;; --- 4. メインループ ---
-(defun demo-main-loop ()
+(defun demo-main-loop (ns)
   (ros::rate 20)
-  (ros::subscribe "/button_click" std_msgs::String #'ros-command-callback)
+  (setq button-topic (if ns (format nil "~A~A" ns "/button_click") "/button_click"))
+  (ros::subscribe button-topic std_msgs::String #'ros-command-callback)
   (do-until-key
     (let ((executor-func-name (gethash *target-state* *state-dispatch-table*)))
 
@@ -67,4 +68,4 @@
 (setq ns (ros::get-param "~namespace" nil))
 (kxr-init :create-viewer nil :namespace ns :controller-timeout 40)
 (send *ri* :send-stretch :value 127)
-(demo-main-loop)
+(demo-main-loop ns)
