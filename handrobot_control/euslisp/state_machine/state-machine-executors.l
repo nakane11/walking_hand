@@ -5,7 +5,7 @@
   :transition (
     (send *ri* :servo-on)
     (while t
-      (setq msg (one-shot-subscribe "/fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
+      (setq msg (one-shot-subscribe "fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
       (when (every #'identity (send msg :servo_on_states))
         (return))
       (ros::spin-once)
@@ -26,8 +26,8 @@
 (define-state-executor execute-state-pause :PAUSED
   :transition (
     (when *servo-subscriber*
-      (ros::ros-info "Unsubscribing from /servo_states")
-      (ros::unsubscribe "/servo_states")
+      (ros::ros-info "Unsubscribing from servo_states")
+      (ros::unsubscribe "servo_states")
       (setq *servo-subscriber* nil))
     )
   :persistent ()
@@ -102,7 +102,7 @@
   :transition (
     (send *ri* :servo-on)
     (while t
-      (setq msg (one-shot-subscribe "/fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
+      (setq msg (one-shot-subscribe "fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
       (when (every #'identity (send msg :servo_on_states))
         (return))
       (ros::spin-once)
@@ -125,7 +125,7 @@
      (setq *servo-state-list* nil)
      (send *ri* :servo-on)
      (unless *servo-subscriber*
-       (setq *servo-subscriber* (ros::subscribe "/servo_states" kxr_controller::ServoStateArray #'servo-state-callback)))
+       (setq *servo-subscriber* (ros::subscribe "servo_states" kxr_controller::ServoStateArray #'servo-state-callback)))
      (while (null *servo-state-list*)
        (ros::spin-once)
        (ros::sleep))
@@ -179,7 +179,7 @@
   :transition (
     (send *ri* :servo-on)
     (while t
-      (setq msg (one-shot-subscribe "/fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
+      (setq msg (one-shot-subscribe "fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
       (when (every #'identity (send msg :servo_on_states))
         (return))
       (ros::spin-once)
