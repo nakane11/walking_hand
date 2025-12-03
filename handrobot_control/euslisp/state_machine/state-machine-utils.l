@@ -1,3 +1,5 @@
+(ros::load-ros-manifest "kxr_controller")
+
 (defvar *state-dispatch-table* (make-hash-table :test 'eq))
 
 ;; --- グローバル変数 ---
@@ -47,3 +49,12 @@
      (setf (gethash ,state-keyword *state-dispatch-table*)
            ',name) ;; 関数名（シンボル）を登録
      ))
+
+(defun servo-on-wait ()
+  (send *ri* :servo-on)
+  (while t
+    (setq msg (one-shot-subscribe "fullbody_controller/servo_on_off_real_interface/state" kxr_controller::ServoOnOff))
+    (when (every #'identity (send msg :servo_on_states))
+      (return))
+    (ros::spin-once)
+    (ros::sleep)))
