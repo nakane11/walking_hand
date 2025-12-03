@@ -10,8 +10,11 @@
     (cond
       ;; 持続的状態
       ((string= command "SIT")
-        (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED))
+        (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED) (eq *current-state* :UPRIGHT))
           (setq *target-state* :SITTING)))
+      ((string= command "UPRIGHT")
+        (when (eq *current-state* :SITTING)
+          (setq *target-state* :UPRIGHT)))
       ((string= command "STAND") (setq *target-state* :STANDING))
       ((string= command "PAUSE") (setq *target-state* :PAUSED))
       ((string= command "STAND_WALK")

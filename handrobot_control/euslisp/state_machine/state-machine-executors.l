@@ -61,7 +61,22 @@
   :transition (
     (when (eq *current-state* :STANDING)
       (stand-to-sit))
+    (when (eq *current-state* :UPRIGHT)
+      (send *ri* :angle-vector-sequence (reverse *upright-angle*)
+            (make-list (length *upright-angle*) :initial-element 600))
+      (send *ri* :wait-interpolation))
     (send *ri* :servo-off)
+  )
+  :persistent ()
+  )
+
+(define-state-executor execute-state-upright :UPRIGHT
+  :transition (
+    (servo-on-wait)
+    (when (eq *current-state* :SITTING)
+      (send *ri* :angle-vector-sequence *upright-angle*
+            (make-list (length *upright-angle*) :initial-element 600))
+      (send *ri* :wait-interpolation))
   )
   :persistent ()
 )
