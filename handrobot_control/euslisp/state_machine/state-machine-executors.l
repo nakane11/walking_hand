@@ -81,6 +81,15 @@
   :persistent ()
 )
 
+(define-state-executor execute-state-side :SIDE
+  :transition (
+    (servo-on-wait)
+    (when (eq *current-state* :SITTING)
+      (sit-to-side))
+  )
+  :persistent ()
+)
+
 (define-state-executor execute-state-rotate :STAND_ROTATE
   :transition (
     (unless (eq *current-state* :PAUSED)
