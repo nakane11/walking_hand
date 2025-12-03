@@ -65,6 +65,8 @@
       (send *ri* :angle-vector-sequence (reverse *upright-angle*)
             (make-list (length *upright-angle*) :initial-element 900))
       (send *ri* :wait-interpolation))
+    (when (eq *current-state* :SIDE)
+      (side-to-sit))
     (send *ri* :servo-off)
   )
   :persistent ()
