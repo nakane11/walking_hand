@@ -10,7 +10,7 @@
     (cond
       ;; 持続的状態
       ((string= command "SIT")
-        (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED) (eq *current-state* :UPRIGHT) (eq *current-state* :SIDE))
+        (when (or (eq *current-state* :STANDING) (eq *current-state* :PAUSED) (eq *current-state* :UPRIGHT) (eq *current-state* :SIDE) (eq *current-state* :JANKEN))
           (setq *target-state* :SITTING)))
       ((string= command "UPRIGHT")
         (when (eq *current-state* :SITTING)
@@ -18,6 +18,13 @@
       ((string= command "SIDE")
         (when (eq *current-state* :SITTING)
           (setq *target-state* :SIDE)))
+      ((string= command "JANKEN")
+       (when (eq *current-state* :JANKEN)
+         (setq *return-state* *current-state*)
+         (setq *target-state* :JANKEN-PLAY))
+       (when (or (eq *current-state* :SITTING) (eq *current-state* :UPRIGHT))
+         (setq *target-state* :JANKEN))
+       )
       ((string= command "STAND") (setq *target-state* :STANDING))
       ((string= command "PAUSE") (setq *target-state* :PAUSED))
       ((string= command "STAND_WALK")

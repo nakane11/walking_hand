@@ -1,4 +1,5 @@
 (load "state-machine-motions.l")
+(load "janken.l")
 
 (define-state-executor execute-state-stand :STANDING
   :transition (
@@ -24,6 +25,27 @@
       (setq *servo-subscriber* nil))
     )
   :persistent ()
+)
+
+(define-state-executor execute-state-janken :JANKEN
+  :transition (
+    (servo-on-wait)
+    (when (eq *current-state* :SITTING)
+      (send *ri* :angle-vector-sequence (subseq *upright-angle* 0 3)
+            (make-list 3 :initial-element 1200))
+      (send *ri* :wait-interpolation))
+    (when (eq *current-state* :UPRIGHT)
+      (send *ri* :angle-vector-sequence *paper-to-rock-seq*
+        (make-list (length *paper-to-rock-seq*) :initial-element 1200))
+      )
+    )
+  :persistent ()
+)
+
+(define-action-executor execute-action-janken :JANKEN-PLAY
+  :body (
+    (play-janken)
+  )
 )
 
 (define-action-executor execute-action-bow :BOW
@@ -65,6 +87,10 @@
       (send *ri* :angle-vector-sequence (reverse *upright-angle*)
             (make-list (length *upright-angle*) :initial-element 900))
       (send *ri* :wait-interpolation))
+    (when (eq *current-state* :JANKEN)
+      (send *ri* :angle-vector-sequence (reverse (subseq *upright-angle* 0 3))
+            (make-list 3 :initial-element 900))
+      (send *ri* :wait-interpolation))
     (when (eq *current-state* :SIDE)
       (side-to-sit))
     (send *ri* :servo-off)
@@ -77,7 +103,7 @@
     (servo-on-wait)
     (when (eq *current-state* :SITTING)
       (send *ri* :angle-vector-sequence *upright-angle*
-            (make-list (length *upright-angle*) :initial-element 900))
+            (make-list (length *upright-angle*) :initial-element 1200))
       (send *ri* :wait-interpolation))
   )
   :persistent ()
