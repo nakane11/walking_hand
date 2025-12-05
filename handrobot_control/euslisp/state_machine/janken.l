@@ -56,7 +56,7 @@
 (defun generate-time-list (pose-seq)
   (let ((len (length pose-seq)))
     (if (= len 1)
-        (list 1000) ;; 直接移動の場合の時間
+        (list 1400) ;; 直接移動の場合の時間
       (make-list len :initial-element 1200)))) ;; 軌道の場合の各区間の時間
 
 
@@ -96,4 +96,8 @@
     (format t "Returning to Rock...~%")
     (send *ri* :angle-vector-sequence from-seq (generate-time-list from-seq))
     (send *ri* :wait-interpolation)
+    (format t "Returning to Rock...~%")
+    (send *ri* :angle-vector *rock-pose* 300)
+    (send *ri* :wait-interpolation)
+
     ))

@@ -36,8 +36,8 @@
       (send *ri* :wait-interpolation))
     (when (eq *current-state* :UPRIGHT)
       (send *ri* :angle-vector-sequence *paper-to-rock-seq*
-        (make-list (length *paper-to-rock-seq*) :initial-element 1200))
-      )
+            (make-list (length *paper-to-rock-seq*) :initial-element 1200))
+      (send *ri* :wait-interpolation))
     )
   :persistent ()
 )
