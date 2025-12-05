@@ -31,9 +31,10 @@
   :transition (
     (servo-on-wait)
     (when (eq *current-state* :SITTING)
-      (send *ri* :angle-vector-sequence (subseq *upright-angle* 0 3)
-            (make-list 3 :initial-element 1200))
-      (send *ri* :wait-interpolation))
+      (send *ri* :angle-vector-sequence *janken-angle*
+            (make-list (length *janken-angle*) :initial-element 1200))
+      (send *ri* :wait-interpolation)
+      )
     (when (eq *current-state* :UPRIGHT)
       (send *ri* :angle-vector-sequence *paper-to-rock-seq*
             (make-list (length *paper-to-rock-seq*) :initial-element 1200))
@@ -88,8 +89,8 @@
             (make-list (length *upright-angle*) :initial-element 900))
       (send *ri* :wait-interpolation))
     (when (eq *current-state* :JANKEN)
-      (send *ri* :angle-vector-sequence (reverse (subseq *upright-angle* 0 3))
-            (make-list 3 :initial-element 900))
+      (send *ri* :angle-vector-sequence (reverse *janken-angle*)
+            (make-list (length *janken-angle*) :initial-element 900))
       (send *ri* :wait-interpolation))
     (when (eq *current-state* :SIDE)
       (side-to-sit))
