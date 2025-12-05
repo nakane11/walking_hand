@@ -144,7 +144,7 @@
   )
   )
 
-(define-state-executor execute-state-walk :WHEEL_WALK
+(define-state-executor execute-state-wheel :WHEEL_WALK
   :transition (
     (servo-on-wait)
     (unless (eq *current-state* :PAUSED)
