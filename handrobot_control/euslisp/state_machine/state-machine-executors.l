@@ -119,6 +119,40 @@
   :persistent ()
 )
 
+(define-state-executor execute-state-grasp :GRASP
+  :transition (
+    (unless *is-grasping*
+      (servo-on-wait)
+      (when (or (eq *current-state* :SITTING) (eq *current-state* :PAUSED))
+        (send *ri* :angle-vector #f(68.8838 52.7175 2.63251 3.98251 111.814 38.6438 90.2475 2.16001 126.731 17.7525 74.5538 -1.45124 124.234 14.0063 91.2938 1.65376 103.849 63.1125 82.0463) 2000)
+        (send *ri* :wait-interpolation)
+        (setq *grasp-switch* t)
+        )))
+  :persistent (
+    (when *grasp-switch*
+      (if *is-grasping*
+        (progn
+          (send *ri* :angle-vector #f(61.7288 44.9888 3.94876 -8.26874 34.8975 1.08001 37.2263 -13.8375 40.77 0.16876 31.2188 -2.12624 126.9 17.28 93.2513 -11.1375 101.891 66.3525 81.405) 2000)
+          (send *ri* :wait-interpolation)
+          (unix::sleep 2)
+          (send *ri* :angle-vector #f(68.8838 52.7175 2.63251 3.98251 111.814 38.6438 90.2475 2.16001 126.731 17.7525 74.5538 -1.45124 124.234 14.0063 91.2938 1.65376 103.849 63.1125 82.0463) 2000)
+          (send *ri* :wait-interpolation)
+          (setq *is-grasping* nil)
+          (setq *walk-mode* :ALL))
+        (progn
+          (tapping)
+          (unix::sleep 1)
+          (beckon)
+          (unix::sleep 2)
+          (send *ri* :angle-vector (elt *wheel-walk-145-angle* 0) 3000)
+          (send *ri* :wait-interpolation)
+          (setq *is-grasping* t)
+          (setq *walk-mode* :145)))
+      (setq *grasp-switch* nil)
+    ))
+)
+
+
 (define-state-executor execute-state-rotate :STAND_ROTATE
   :transition (
     (unless (eq *current-state* :PAUSED)
@@ -147,15 +181,20 @@
 (define-state-executor execute-state-wheel :WHEEL_WALK
   :transition (
     (servo-on-wait)
-    (unless (eq *current-state* :PAUSED)
+    (unless (or (eq *current-state* :PAUSED) (eq *current-state* :GRASP))
       (send *ri* :angle-vector #f(79.8525 44.3475 6.54751 8.57251 121.973 35.9775 65.205 3.47626 134.899 21.2625 45.6638 2.83501 132.874 16.3013 70.1325 11.8463 109.148 67.0275 55.62) 1000)
       (send *ri* :wait-interpolation)
       )
     )
   :persistent (
-    (send *ri* :angle-vector-sequence *wheel-walk-angle*
-          (make-list (length *wheel-walk-angle*) :initial-element 500))
-    (send *ri* :wait-interpolation)
+    (when (eq *walk-mode* :ALL)
+      (send *ri* :angle-vector-sequence *wheel-walk-angle*
+            (make-list (length *wheel-walk-angle*) :initial-element 500))
+      (send *ri* :wait-interpolation))
+    (when (eq *walk-mode* :145)
+      (send *ri* :angle-vector-sequence *wheel-walk-145-angle*
+            (make-list (length *wheel-walk-angle*) :initial-element 500))
+      (send *ri* :wait-interpolation))
     )
   )
 
