@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="fingertip_ver2">
+  <xacro:macro name="fingertip_ver2" params="prefix:='' parent_link:=world xyz:='0 0 0' rpy:='0 0 0'">
+    <joint name="${parent_link}_to_${prefix}base_link_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}base_link"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+    <link name="${prefix}base_link">
+      <inertial>
+        <origin xyz="-0.0301116979399669 -0.00162877065316781 0.0144583185058832" rpy="0.0 -0.0 0.0"/>
+        <mass value="0.015"/>
+        <inertia ixx="3.99064440234687e-06" ixy="-3.82651084859449e-09" ixz="4.2626958925575e-09" iyy="3.9553152425591e-06" iyz="7.53210893362676e-09" izz="4.0084312676069e-06"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://fingertip_ver2/meshes/base_link.dae"/>
+        </geometry>
+        <material name="${prefix}__unnamed_material_1"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://fingertip_ver2/meshes/base_link.stl"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      </collision>
+    </link>
+    <material name="${prefix}__unnamed_material_1">
+      <color rgba="0.29803922 0.29803922 0.29803922 1.        "/>
+    </material>
+  </xacro:macro>
+</robot>

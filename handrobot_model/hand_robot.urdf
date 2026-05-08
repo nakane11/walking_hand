@@ -6,120 +6,120 @@
 <robot name="hand_robot">
   <link name="base_link">
     <inertial>
-      <origin xyz="-0.0537837189568639 -0.000735089523891269 0.0875877825389031" rpy="0.0 -0.0 0.0" />
-      <mass value="0.274553101575067" />
-      <inertia ixx="0.000434149537516523" ixy="3.82592618679265e-06" ixz="-0.000192550140415889" iyy="0.00117466284857924" iyz="1.01174695313173e-05" izz="0.000782483739198173" />
+      <origin xyz="0.00510318777154775 -0.0130093908467464 0.0848140883890571" rpy="0.0 -0.0 0.0" />
+      <mass value="0.616402354567036" />
+      <inertia ixx="0.0028057649242329" ixy="2.88263725793582e-05" ixz="-0.000155371869494983" iyy="0.00152018511975496" iyz="0.00037676212047229" izz="0.00152286768668578" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://palm/meshes/base_link.dae" />
+        <mesh filename="package://palm_ver2/meshes/base_link.dae" />
       </geometry>
       <material name="__unnamed_material_1" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://palm/meshes/base_link.dae" />
+        <mesh filename="package://palm_ver2/meshes/base_link.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <link name="dummy_link1">
     <inertial>
-      <origin xyz="-0.000172481557313531 6.01982933235365e-05 -0.00259009685862507" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0119886897783525" />
-      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935475e-09" ixz="-5.68819834183881e-09" iyy="1.95430556833594e-06" iyz="6.27899886931677e-10" izz="3.69885599478183e-06" />
+      <origin xyz="0.00146131369473512 -0.000201870283592802 -0.0028355006037001" rpy="0.0 -0.0 0.0" />
+      <mass value="0.00131295075943631" />
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705177e-09" ixz="4.8297652588556e-09" iyy="5.8814488141979e-08" iyz="-3.56234285318554e-10" izz="1.05520720481508e-07" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link1.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link1.dae" />
       </geometry>
       <material name="__unnamed_material_2" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link1.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link1.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <link name="dummy_link2">
     <inertial>
-      <origin xyz="-0.000172481557313628 6.01982933235283e-05 -0.00259009685862507" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0119886897783526" />
-      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935204e-09" ixz="-5.68819834183908e-09" iyy="1.95430556833594e-06" iyz="6.27899886931739e-10" izz="3.69885599478183e-06" />
+      <origin xyz="0.00146131369473512 -0.000201870283592774 -0.00283550060370005" rpy="0.0 -0.0 0.0" />
+      <mass value="0.00131295075943631" />
+      <inertia ixx="5.41755504446203e-08" ixy="1.27650591705179e-09" ixz="4.8297652588556e-09" iyy="5.8814488141979e-08" iyz="-3.56234285318561e-10" izz="1.05520720481508e-07" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link2.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link2.dae" />
       </geometry>
       <material name="__unnamed_material_3" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link2.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link2.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <link name="dummy_link3">
     <inertial>
-      <origin xyz="-0.000172481557313607 6.01982933235322e-05 -0.00259009685862505" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0119886897783526" />
-      <inertia ixx="1.92006679954346e-06" ixy="2.28901701935102e-09" ixz="-5.68819834183894e-09" iyy="1.95430556833594e-06" iyz="6.2789988693156e-10" izz="3.69885599478183e-06" />
+      <origin xyz="0.00146131369473511 -0.000201870283592781 -0.00283550060370005" rpy="0.0 -0.0 0.0" />
+      <mass value="0.00131295075943631" />
+      <inertia ixx="5.41755504446203e-08" ixy="1.27650591705179e-09" ixz="4.8297652588556e-09" iyy="5.88144881419791e-08" iyz="-3.56234285318559e-10" izz="1.05520720481508e-07" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link3.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link3.dae" />
       </geometry>
       <material name="__unnamed_material_4" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link3.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link3.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <link name="dummy_link4">
     <inertial>
-      <origin xyz="-0.00017248155731359 6.01982933235428e-05 -0.00259009685862505" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0119886897783526" />
-      <inertia ixx="1.92006679954347e-06" ixy="2.28901701935341e-09" ixz="-5.68819834183874e-09" iyy="1.95430556833594e-06" iyz="6.27899886931517e-10" izz="3.69885599478184e-06" />
+      <origin xyz="0.00146131369473507 -0.000201870283592774 -0.00283550060370015" rpy="0.0 -0.0 0.0" />
+      <mass value="0.00131295075943631" />
+      <inertia ixx="5.41755504446202e-08" ixy="1.27650591705179e-09" ixz="4.82976525885559e-09" iyy="5.8814488141979e-08" iyz="-3.56234285318562e-10" izz="1.05520720481508e-07" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link4.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link4.dae" />
       </geometry>
       <material name="__unnamed_material_5" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link4.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link4.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <link name="dummy_link5">
     <inertial>
-      <origin xyz="-0.000172556814431887 6.02216550355177e-05 -0.00259010777209796" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0119886601362974" />
-      <inertia ixx="1.9201418091373e-06" ixy="2.27696720708466e-09" ixz="-5.68868325973998e-09" iyy="1.95428446813742e-06" iyz="6.2782306321744e-10" izz="3.6989097395101e-06" />
+      <origin xyz="0.00146131839808916 -0.000201871766656765 -0.00283550971733584" rpy="0.0 -0.0 0.0" />
+      <mass value="0.0013129474786583" />
+      <inertia ixx="5.41755476900064e-08" ixy="1.27650587245663e-09" ixz="4.82976591798887e-09" iyy="5.88144854362336e-08" iyz="-3.56234311185189e-10" izz="1.05520720381858e-07" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link5.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link5.dae" />
       </geometry>
       <material name="__unnamed_material_6" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://palm/meshes/dummy_link5.dae" />
+        <mesh filename="package://palm_ver2/meshes/dummy_link5.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
@@ -129,53 +129,53 @@
     <parent link="base_link" />
     <child link="dummy_link1" />
     <axis xyz="0. 0. 0." />
-    <origin xyz="-0.134 0.0 0.104" rpy="0.0 -0.0 0.0" />
+    <origin xyz="0.0114999999999997 0.0569905394079266 0.147" rpy="0.0 -0.0 -1.5707963267949003" />
   </joint>
   <joint name="dummy_joint2" type="fixed">
     <limit effort="0.0" velocity="0.0" />
     <parent link="base_link" />
     <child link="dummy_link2" />
     <axis xyz="0. 0. 0." />
-    <origin xyz="-0.0790000000000001 0.0 0.148" rpy="0.0 -0.0 0.0" />
+    <origin xyz="0.0114999999999993 0.00199053940792622 0.191" rpy="-0.0 -0.0 -1.57079632679489" />
   </joint>
   <joint name="dummy_joint3" type="fixed">
     <limit effort="0.0" velocity="0.0" />
     <parent link="base_link" />
     <child link="dummy_link3" />
     <axis xyz="0. 0. 0." />
-    <origin xyz="-0.024 0.0 0.169" rpy="0.0 -0.0 0.0" />
+    <origin xyz="0.0114999999999994 -0.0530094605920739 0.212" rpy="-0.0 -0.0 -1.57079632679489" />
   </joint>
   <joint name="dummy_joint4" type="fixed">
     <limit effort="0.0" velocity="0.0" />
     <parent link="base_link" />
     <child link="dummy_link4" />
     <axis xyz="0. 0. 0." />
-    <origin xyz="0.0309999999999999 0.0 0.138" rpy="0.0 -0.0 0.0" />
+    <origin xyz="0.011499999999999 -0.108009460592074 0.181" rpy="-0.0 -0.0 -1.57079632679489" />
   </joint>
   <joint name="dummy_joint5" type="fixed">
     <limit effort="0.0" velocity="0.0" />
     <parent link="base_link" />
     <child link="dummy_link5" />
     <axis xyz="0. 0. 0." />
-    <origin xyz="0.018463196704848 0.0 0.0524638930461059" rpy="3.14159265358979 0.6356359574700541 3.14159265358978" />
+    <origin xyz="0.0114999999999986 -0.0954726572969222 0.0954638930461058" rpy="3.14159265358979 0.6356359574700541 1.57079632679489" />
   </joint>
   <material name="__unnamed_material_1">
-    <color rgba="0.29803922 0.29803922 0.29803922 1.        " />
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        " />
   </material>
   <material name="__unnamed_material_2">
-    <color rgba="0.75294118 0.75294118 0.75294118 1.        " />
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        " />
   </material>
   <material name="__unnamed_material_3">
-    <color rgba="0.75294118 0.75294118 0.75294118 1.        " />
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        " />
   </material>
   <material name="__unnamed_material_4">
-    <color rgba="0.75294118 0.75294118 0.75294118 1.        " />
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        " />
   </material>
   <material name="__unnamed_material_5">
-    <color rgba="0.75294118 0.75294118 0.75294118 1.        " />
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        " />
   </material>
   <material name="__unnamed_material_6">
-    <color rgba="0.75294118 0.75294118 0.75294118 1.        " />
+    <color rgba="0.79215686 0.81960784 0.93333333 1.        " />
   </material>
   <joint name="dummy_link1_to_little_module1_base_link_joint" type="fixed">
     <parent link="dummy_link1" />
@@ -478,26 +478,26 @@
   </joint>
   <link name="little_module4_base_link">
     <inertial>
-      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0143355339373342" />
-      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06" />
+      <origin xyz="-0.0301116979399669 -0.00162877065316781 0.0144583185058832" rpy="0.0 -0.0 0.0" />
+      <mass value="0.015" />
+      <inertia ixx="3.99064440234687e-06" ixy="-3.82651084859449e-09" ixz="4.2626958925575e-09" iyy="3.9553152425591e-06" iyz="7.53210893362676e-09" izz="4.0084312676069e-06" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.dae" />
       </geometry>
       <material name="little_module4___unnamed_material_1" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <material name="little_module4___unnamed_material_1">
-    <color rgba="1.         0.6627451  0.54117647 1.        " />
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        " />
   </material>
   <joint name="dummy_link2_to_ring_module1_base_link_joint" type="fixed">
     <parent link="dummy_link2" />
@@ -800,26 +800,26 @@
   </joint>
   <link name="ring_module4_base_link">
     <inertial>
-      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0143355339373342" />
-      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06" />
+      <origin xyz="-0.0301116979399669 -0.00162877065316781 0.0144583185058832" rpy="0.0 -0.0 0.0" />
+      <mass value="0.015" />
+      <inertia ixx="3.99064440234687e-06" ixy="-3.82651084859449e-09" ixz="4.2626958925575e-09" iyy="3.9553152425591e-06" iyz="7.53210893362676e-09" izz="4.0084312676069e-06" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.dae" />
       </geometry>
       <material name="ring_module4___unnamed_material_1" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <material name="ring_module4___unnamed_material_1">
-    <color rgba="1.         0.6627451  0.54117647 1.        " />
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        " />
   </material>
   <joint name="dummy_link3_to_middle_module1_base_link_joint" type="fixed">
     <parent link="dummy_link3" />
@@ -1122,26 +1122,26 @@
   </joint>
   <link name="middle_module4_base_link">
     <inertial>
-      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0143355339373342" />
-      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06" />
+      <origin xyz="-0.0301116979399669 -0.00162877065316781 0.0144583185058832" rpy="0.0 -0.0 0.0" />
+      <mass value="0.015" />
+      <inertia ixx="3.99064440234687e-06" ixy="-3.82651084859449e-09" ixz="4.2626958925575e-09" iyy="3.9553152425591e-06" iyz="7.53210893362676e-09" izz="4.0084312676069e-06" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.dae" />
       </geometry>
       <material name="middle_module4___unnamed_material_1" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <material name="middle_module4___unnamed_material_1">
-    <color rgba="1.         0.6627451  0.54117647 1.        " />
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        " />
   </material>
   <joint name="dummy_link4_to_index_module1_base_link_joint" type="fixed">
     <parent link="dummy_link4" />
@@ -1444,26 +1444,26 @@
   </joint>
   <link name="index_module4_base_link">
     <inertial>
-      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0143355339373342" />
-      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06" />
+      <origin xyz="-0.0301116979399669 -0.00162877065316781 0.0144583185058832" rpy="0.0 -0.0 0.0" />
+      <mass value="0.015" />
+      <inertia ixx="3.99064440234687e-06" ixy="-3.82651084859449e-09" ixz="4.2626958925575e-09" iyy="3.9553152425591e-06" iyz="7.53210893362676e-09" izz="4.0084312676069e-06" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.dae" />
       </geometry>
       <material name="index_module4___unnamed_material_1" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <material name="index_module4___unnamed_material_1">
-    <color rgba="1.         0.6627451  0.54117647 1.        " />
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        " />
   </material>
   <joint name="dummy_link5_to_thumb_module1_base_link_joint" type="fixed">
     <parent link="dummy_link5" />
@@ -1736,25 +1736,25 @@
   </joint>
   <link name="thumb_module4_base_link">
     <inertial>
-      <origin xyz="-4.45136749414631e-05 2.74911354251475e-05 0.01526296474957" rpy="0.0 -0.0 0.0" />
-      <mass value="0.0143355339373342" />
-      <inertia ixx="1.67198153889703e-06" ixy="-3.86118634343168e-09" ixz="2.09684473771432e-09" iyy="2.41636111915256e-06" iyz="2.62797611358753e-09" izz="2.60259577595367e-06" />
+      <origin xyz="-0.0301116979399669 -0.00162877065316781 0.0144583185058832" rpy="0.0 -0.0 0.0" />
+      <mass value="0.015" />
+      <inertia ixx="3.99064440234687e-06" ixy="-3.82651084859449e-09" ixz="4.2626958925575e-09" iyy="3.9553152425591e-06" iyz="7.53210893362676e-09" izz="4.0084312676069e-06" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.dae" />
       </geometry>
       <material name="thumb_module4___unnamed_material_1" />
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fingertip/meshes/base_link.dae" />
+        <mesh filename="package://fingertip_ver2/meshes/base_link.stl" />
       </geometry>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
     </collision>
   </link>
   <material name="thumb_module4___unnamed_material_1">
-    <color rgba="1.         0.6627451  0.54117647 1.        " />
+    <color rgba="0.29803922 0.29803922 0.29803922 1.        " />
   </material>
 </robot>
